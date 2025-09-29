@@ -1,0 +1,49 @@
+{
+  "name": "wikiclub-tech",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.22",
+    "fs": "^0.0.1-security",
+    "lucide-react": "^0.544.0",
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "description": "Welcome to the official repository for the college Wiki Club website! This project serves as a central hub for our student community, promoting open-source development and providing a platform for members to learn, collaborate, and contribute.",
+  "main": "npm start",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShreyJaiswal1/wikiclub-tech.git"
+  },
+  "keywords": [
+    "wikiclub",
+    "prayagraj",
+    "wikiclubtechuu"
+  ],
+  "author": "ShreyJaiswal1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShreyJaiswal1/wikiclub-tech/issues"
+  },
+  "homepage": "https://github.com/ShreyJaiswal1/wikiclub-tech#readme"
+}

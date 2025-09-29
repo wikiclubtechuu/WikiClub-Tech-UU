@@ -1,0 +1,21 @@
+{
+  "name": "WikiClub Tech",
+  "short_name": "WikiClub Tech",
+  "description": "The official website of the WikiClub Tech community.",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}
