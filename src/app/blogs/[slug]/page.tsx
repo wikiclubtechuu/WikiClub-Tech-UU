@@ -15,7 +15,7 @@ const BlogPostPage = ({ params }) => {
   try {
     const fileContents = fs.readFileSync(filePath, "utf8");
     post = JSON.parse(fileContents);
-  } catch (error) {
+  } catch {
     return <div>Not Found</div>;
   }
 

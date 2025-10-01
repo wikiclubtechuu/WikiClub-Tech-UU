@@ -26,8 +26,8 @@ const TermsOfService = () => {
           </li>
           <li>
             To transmit, or procure the sending of, any advertising or
-            promotional material, including any "junk mail", "chain letter",
-            "spam", or any other similar solicitation.
+            promotional material, including any &quot;junk mail&quot;, &quot;chain letter&quot;,
+            &quot;spam&quot;, or any other similar solicitation.
           </li>
           <li>
             To impersonate or attempt to impersonate WikiClub Tech, a WikiClub
