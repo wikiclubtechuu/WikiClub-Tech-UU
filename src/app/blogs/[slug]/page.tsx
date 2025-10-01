@@ -6,7 +6,7 @@ import path from "path";
 import { MotionDiv } from "@/components/blogs/MotionWrapper";
 import ReactMarkdown from "react-markdown";
 
-const BlogPostPage = ({ params }) => {
+const BlogPostPage = ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
   const blogsDirectory = path.join(process.cwd(), "src/data/blogs");
   const filePath = path.join(blogsDirectory, `${slug}.json`);
