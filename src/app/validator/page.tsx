@@ -23,7 +23,7 @@ const ValidatorPage = () => {
         </div>
         
         {/* Left side decoration */}
-        <div className="absolute left-0 top-1/3 w-32 h-96 opacity-20">
+        <div className="absolute left-6 top-1/3 w-32 h-96 opacity-20">
           <div className="grid grid-cols-3 gap-4">
             {[...Array(24)].map((_, i) => (
               <div key={i} className="w-2 h-2 bg-[#005B8E] rounded-full" />
