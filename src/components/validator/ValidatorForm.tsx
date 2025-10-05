@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Loader2, Shield, Download, ExternalLink, CheckCircle2, XCircle } from 'lucide-react';
+import { Loader2, Shield} from 'lucide-react';
 import { validateCertificate } from '@/utils/certificateValidator';
 import { ValidationFormData, ValidationResult } from '@/types/certificate';
 import { VerificationResult } from './VerificationResult';
@@ -151,7 +151,7 @@ const ValidatorForm: React.FC = () => {
           <div className="text-center space-y-3">
             <h3 className="font-semibold text-gray-900">Need Help?</h3>
             <p className="text-sm text-gray-600">
-              If you're having trouble finding your certificate or the validation fails, please contact us at{' '}
+              If you&apos;re having trouble finding your certificate or the validation fails, please contact us at{' '}
               <a 
                 href="mailto:wikiclub@united.edu.in" 
                 className="text-blue-600 hover:underline font-medium"
