@@ -13,6 +13,7 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/blogs", label: "Blogs" },
     { href: "/teams", label: "Teams" },
+    { href: "/validator", label: "Validator" },
     { href: "/join-us", label: "Join Us" },
   ];
 
