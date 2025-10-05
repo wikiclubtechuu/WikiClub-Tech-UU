@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/ShreyJaiswal1/wikiclub-tech/refs/heads/main/public/wikiclub.png" style="width:100%; align:center"/>
+<img src="https://raw.githubusercontent.com/wikiclubtechuu/WikiClub-Tech-UU/refs/heads/main/public/wikiclub.png" style="width:100%; align:center"/>
 
 
 # Wiki Club Tech - United University
