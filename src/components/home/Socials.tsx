@@ -9,18 +9,20 @@ import NewsletterForm from "./NewsletterForm";
 const Socials = () => {
   const socialLinks = [
     {
-      icon: <FaInstagram className="text-pink-600 text-4xl" />,
-      title: "Follow on Instagram",
-      description: "Follow and discover developer resources, community events, and inspirational stories.",
-      linkText: "Learn more",
-      href: "#",
+      icon: <FaInstagram className='text-pink-600 text-4xl' />,
+      title: 'Follow on Instagram',
+      description:
+        'Follow and discover developer resources, community events, and inspirational stories.',
+      linkText: 'Click here',
+      href: 'https://www.instagram.com/wikiclubtech.uu/',
     },
     {
-      icon: <FaLinkedin className="text-blue-700 text-4xl" />,
-      title: "Join on LinkedIn",
-      description: "Join a community of creative developers and learn how to use the latest in technology.",
-      linkText: "Learn more",
-      href: "#",
+      icon: <FaLinkedin className='text-blue-700 text-4xl' />,
+      title: 'Join on LinkedIn',
+      description:
+        'Join a community of creative developers and learn how to use the latest in technology.',
+      linkText: 'Learn more',
+      href: 'https://www.linkedin.com/company/wikiclubtechuu/',
     },
   ];
 
