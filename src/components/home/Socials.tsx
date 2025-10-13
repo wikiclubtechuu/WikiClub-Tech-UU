@@ -13,7 +13,7 @@ const Socials = () => {
       title: 'Follow on Instagram',
       description:
         'Follow and discover developer resources, community events, and inspirational stories.',
-      linkText: 'Click here',
+      linkText: 'Follow us',
       href: 'https://www.instagram.com/wikiclubtech.uu/',
     },
     {
@@ -21,7 +21,7 @@ const Socials = () => {
       title: 'Join on LinkedIn',
       description:
         'Join a community of creative developers and learn how to use the latest in technology.',
-      linkText: 'Learn more',
+      linkText: 'Follow us',
       href: 'https://www.linkedin.com/company/wikiclubtechuu/',
     },
   ];
