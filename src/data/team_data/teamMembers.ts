@@ -237,9 +237,9 @@ export const teamMembers: TeamMember[] = [
     role: "Project Coordinator Wiki@IIIT Hyderabad",
     roleType: "coordinator",
     image: "/team/ankitsir.png",
-    email: "sanskardubeydev@gmail.com",
-    linkedin: "https://www.linkedin.com/in/sanskardev/",
-    github: "Dubeysanskar",
+    email: "",
+    linkedin: "https://www.linkedin.com/in/ankit-kumar-verma-081804160",
+    github: "",
     bio: "",
   }
 ];
