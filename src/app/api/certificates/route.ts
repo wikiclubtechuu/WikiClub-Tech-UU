@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { parse } from 'papaparse';
 
-const GOOGLE_SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/1KfxWeP21U06emmQjDGQVg9cUcJbxMT29vOz6ZDTfH4I/export?format=csv';
+
+const GOOGLE_SHEETS_CSV_URL = process.env.CERTIFICATE_DATA;
 
 type CertificateRecord = {
   ID: string;
@@ -22,6 +23,10 @@ async function fetchAndCacheCertificates() {
   }
 
   try {
+    if (!GOOGLE_SHEETS_CSV_URL) {
+      throw new Error('CERTIFICATE_DATA environment variable is not set');
+    }
+
     const response = await fetch(GOOGLE_SHEETS_CSV_URL);
     if (!response.ok) {
       throw new Error('Failed to fetch certificate data');
