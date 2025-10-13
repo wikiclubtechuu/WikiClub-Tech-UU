@@ -200,10 +200,10 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "18",
-    name: "Saumya agrahari ",
+    name: "Saumya agrahari",
     role: "Volunteer",
     roleType: "volunteer",
-    image: "/team/Saumya agrahari.jpg",
+    image: "/team/Saumya Agrahari.jpg",
     email: "saumyaagrahari262730@gmail.com",
     linkedin: "https://www.linkedin.com/in/saumya-agrahari-924900347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     github: "https://github.com/saumya3005",
