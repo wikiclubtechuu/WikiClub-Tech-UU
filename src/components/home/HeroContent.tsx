@@ -35,9 +35,7 @@ const HeroContent = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <span className='text-gray-600'>
-            WikiClub Tech
-          </span>
+          <span className='text-gray-600'>WikiClub Tech</span>
         </motion.h1>
 
         <motion.div
@@ -62,8 +60,7 @@ const HeroContent = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          Welcome to the official page of the WikiClub Tech - United
-          University.
+          Welcome to the official page of the WikiClub Tech - United University.
           <br />
         </motion.p>
 
@@ -72,7 +69,10 @@ const HeroContent = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <motion.button
+          <motion.a
+            href='https://forms.gle/FGoyrEHC1CuP9hPSA'
+            target='_blank'
+            rel='noopener noreferrer'
             className='inline-flex items-center justify-center px-10 py-5 font-bold text-white bg-gradient-to-r from-cyan-500 to-sky-500 rounded-full shadow-xl group relative overflow-hidden'
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.98 }}
@@ -97,7 +97,7 @@ const HeroContent = () => {
               </motion.svg>
               Join Our Community
             </span>
-          </motion.button>
+          </motion.a>
         </motion.div>
       </motion.div>
     </div>
