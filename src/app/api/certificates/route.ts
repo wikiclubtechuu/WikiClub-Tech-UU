@@ -7,69 +7,51 @@ type CertificateRecord = {
   ID: string;
   Name: string;
   Email: string;
-  'Downlod Link': string;  // Note: Kept the misspelling as per requirements
+  'Downlod Link': string;
 };
 
-//Below is the old GET method which will fetch all certificates, can be enabled if needed in future
-// admin use
+// In-memory cache for certificate data
+let cachedCertificates: CertificateRecord[] = [];
+let lastFetchTime = 0;
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-/*
-export async function GET(req: NextRequest) {
+async function fetchAndCacheCertificates() {
+  const now = Date.now();
+  if (now - lastFetchTime < CACHE_DURATION && cachedCertificates.length > 0) {
+    return; // Cache is still valid
+  }
+
   try {
-    // Fetch CSV data from Google Sheets
     const response = await fetch(GOOGLE_SHEETS_CSV_URL);
     if (!response.ok) {
       throw new Error('Failed to fetch certificate data');
     }
-
     const csvText = await response.text();
-
-    // Parsing csv data
     const { data, errors } = parse(csvText, {
       header: true,
       skipEmptyLines: true,
     });
 
     if (errors.length > 0) {
-      console.error('CSV parsing errors:', errors);
       throw new Error('Failed to parse certificate data');
     }
 
-    // Type assertion and validation
-    const certificates = data as CertificateRecord[];
-
-    // cleaning the data
-    const normalizedCertificates = certificates.map(cert => ({
-      id: cert.ID.trim().toLowerCase(),
-      name: cert.Name.trim().toLowerCase(),
-      email: cert.Email.trim().toLowerCase(),
-      downloadUrl: cert['Downlod Link'].trim()
-    }));
-
-    // Cache control headers
-    const headers = {
-      'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30' // 1 minute cache, 30 seconds stale
-    };
-
-    return NextResponse.json(
-      { certificates: normalizedCertificates },
-      { headers }
-    );
-
+    cachedCertificates = data as CertificateRecord[];
+    lastFetchTime = now;
   } catch (error) {
-    console.error('Certificate API error:', error);
-    return NextResponse.json(
-      { error: 'Failed to retrieve certificate data' },
-      { status: 500 }
-    );
+    console.error('Failed to refresh certificate cache:', error);
+    // If fetching fails, we'll rely on the old cache if it exists
+    if (cachedCertificates.length === 0) {
+      throw error; // Rethrow if there's no cache at all
+    }
   }
 }
-*/
 
 // Verify specific certificate - API call to validate certificate
-// POST endpoint
 export async function POST(req: NextRequest) {
   try {
+    await fetchAndCacheCertificates();
+
     const { certificateId, emailOrName } = await req.json();
 
     if (!certificateId || !emailOrName) {
@@ -79,50 +61,26 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Normalize input
     const normalizedId = certificateId.trim().toLowerCase();
     const normalizedEmailOrName = emailOrName.trim().toLowerCase();
 
-    // fetching
-    const response = await fetch(GOOGLE_SHEETS_CSV_URL);
-    if (!response.ok) {
-      throw new Error('Failed to fetch certificate data');
-    }
-
-    //parsing
-    const csvText = await response.text();
-    const { data, errors } = parse(csvText, {
-      header: true,
-      skipEmptyLines: true,
-    });
-
-    if (errors.length > 0) {
-      throw new Error('Failed to parse certificate data');
-    }
-
-    const certificates = data as CertificateRecord[];
-
-    // Find matching certificate
-    const matchingCertificate = certificates.find(cert => {
+    const matchingCertificate = cachedCertificates.find(cert => {
       const id = cert.ID.trim().toLowerCase();
       const name = cert.Name.trim().toLowerCase();
       const email = cert.Email.trim().toLowerCase();
-
-      return id === normalizedId && 
-             (email === normalizedEmailOrName || name === normalizedEmailOrName);
+      return id === normalizedId && (email === normalizedEmailOrName || name === normalizedEmailOrName);
     });
 
     if (!matchingCertificate) {
       return NextResponse.json(
-        { 
+        {
           success: false,
-          message: 'Certificate not found. Please check your Certificate ID and Email/Name.' 
+          message: 'Certificate not found. Please check your Certificate ID and Email/Name.'
         },
         { status: 404 }
       );
     }
 
-    // Return certificate details
     return NextResponse.json({
       success: true,
       certificate: {
@@ -132,13 +90,12 @@ export async function POST(req: NextRequest) {
         downloadUrl: matchingCertificate['Downlod Link']
       }
     });
-
   } catch (error) {
     console.error('Certificate verification error:', error);
     return NextResponse.json(
-      { 
+      {
         success: false,
-        error: 'Failed to verify certificate' 
+        error: 'Failed to verify certificate'
       },
       { status: 500 }
     );

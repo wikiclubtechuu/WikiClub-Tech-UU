@@ -61,14 +61,7 @@ const ValidatorPage = () => {
           {/* Validator Form */}
           <ValidatorForm />
 
-          {/* Bottom Wiki Globe Icon */}
-          <div className="flex justify-center mt-12 opacity-50">
-            <svg width="40" height="40" viewBox="0 0 48 48" fill="none">
-              <path d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20z" stroke="#005B8E" strokeWidth="2"/>
-              <path d="M24 44c5.523 0 10-8.954 10-20S29.523 4 24 4s-10 8.954-10 20 4.477 20 10 20z" stroke="#2E8B57" strokeWidth="2"/>
-              <path d="M4 24h40M8 16h32M8 32h32" stroke="#8B0000" strokeWidth="2"/>
-            </svg>
-          </div>
+
         </div>
       </div>
     </div>

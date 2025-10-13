@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle2, XCircle, Download } from 'lucide-react';
+import { CheckCircle2, XCircle, Download, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { ValidationResult } from '@/types/certificate';
@@ -9,9 +9,10 @@ import { generateQRCode } from '@/utils/certificateValidator';
 
 interface VerificationResultProps {
   result: ValidationResult;
+  onGoBack: () => void;
 }
 
-export const VerificationResult: React.FC<VerificationResultProps> = ({ result }) => {
+export const VerificationResult: React.FC<VerificationResultProps> = ({ result, onGoBack }) => {
   if (!result) return null;
 
   if (!result.success || !result.certificate) {
@@ -26,13 +27,10 @@ export const VerificationResult: React.FC<VerificationResultProps> = ({ result }
   }
 
   const { certificate } = result;
-  // Generate QR code from the direct download URL
   const qrCodeUrl = generateQRCode(certificate.downloadUrl || '');
-
 
   return (
     <Card className="border-2 border-[#2E8B57]/30 bg-gradient-to-br from-[#2E8B57]/10 to-white relative overflow-hidden">
-      
       <CardContent className="pt-6 relative">
         <div className="flex flex-col items-center space-y-4">
           <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#2E8B57] to-[#005B8E] shadow-lg transform hover:scale-105 transition-transform duration-300">
@@ -50,19 +48,16 @@ export const VerificationResult: React.FC<VerificationResultProps> = ({ result }
 
           <div className="w-full max-w-md space-y-4 mt-4">
             <div className="flex flex-col space-y-4">
-              {/* Certificate ID */}
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center px-4 py-2 bg-[#005B8E]/5 rounded-lg">
                 <div className="font-medium text-[#005B8E] mb-1 sm:mb-0">Certificate ID:</div>
                 <div className="text-gray-800 break-all">{certificate.id}</div>
               </div>
               
-              {/* Name */}
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center px-4 py-2 bg-[#2E8B57]/5 rounded-lg">
                 <div className="font-medium text-[#2E8B57] mb-1 sm:mb-0">Name:</div>
                 <div className="text-gray-800 break-all">{certificate.name}</div>
               </div>
               
-              {/* Email */}
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center px-4 py-2 bg-[#8B0000]/5 rounded-lg">
                 <div className="font-medium text-[#8B0000] mb-1 sm:mb-0">Email:</div>
                 <div className="text-gray-800 break-all">{certificate.email}</div>
@@ -91,6 +86,15 @@ export const VerificationResult: React.FC<VerificationResultProps> = ({ result }
               >
                 <Download className="w-4 h-4" />
                 View / Download Certificate
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={onGoBack}
+                className="flex items-center gap-2"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Go Back
               </Button>
             </div>
           </div>

@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     icon: "/logo.svg",
   },
   manifest: "/manifest.json",
-  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
