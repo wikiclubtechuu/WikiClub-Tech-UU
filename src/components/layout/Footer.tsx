@@ -44,7 +44,10 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href='/join-us' className='hover:text-gray-300'>
+                <Link
+                  href='https://forms.gle/FGoyrEHC1CuP9hPSA'
+                  className='hover:text-gray-300'
+                >
                   Join Us
                 </Link>
               </li>

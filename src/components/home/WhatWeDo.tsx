@@ -10,32 +10,27 @@ const WhatWeDo = () => {
       title: 'Open Source Contribution',
       description:
         'We actively contribute to open-source projects, believing in the power of community-driven development.',
-      image: "https://i.ibb.co/TzZHrtn/g1.jpg",
+      image:
+        'https://i.ibb.co/hxDmnkqy/1758819902792.jpg',
     },
     {
       title: 'Community Events',
       description:
         'We organize workshops, hackathons, and meetups to foster a vibrant and collaborative learning environment.',
-      image: "https://i.ibb.co/Z1JwmMXq/g14.jpg",
+      image: 'https://i.ibb.co/Z1JwmMXq/g14.jpg',
     },
     {
       title: 'Tech Workshops',
       description:
         'We host workshops on various technologies, from web development to machine learning, to help members learn new skills.',
-      image: "https://i.ibb.co/mCCC3H0T/g15.jpg",
+      image: 'https://i.ibb.co/TzZHrtn/g1.jpg',
     },
     {
       title: 'Industry Collaboration & Mentorship',
       description:
         'We are proudly affiliated with GDG Prayagraj and receive mentorship from experts at IIIT Hyderabad, connecting our members with the broader tech community.',
-      image: "https://i.ibb.co/LzhtDZYX/g12.jpg",
-    },
-    {
-      title: 'Project Incubator',
-      description:
-        'We provide a platform for members to pitch, build, and launch their own tech projects with mentorship and support.',
-      image: "https://i.ibb.co/5Wsrqhxn/g10.jpg",
-    },
+      image: 'https://i.ibb.co/LzhtDZYX/g12.jpg',
+    }
   ];
 
   return (

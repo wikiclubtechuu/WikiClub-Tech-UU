@@ -1,21 +1,13 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import Images from '@/data/gallery/images';
+const images = Images;
+
 
 const Gallery = () => {
- const images = [
-    { src: "https://i.ibb.co/jvMLqNDD/g16.jpg",  alt: "Gallery image 1" },
-    { src: "https://i.ibb.co/23gH165X/g17.jpg", alt: "Gallery image 6" },
-    { src: "https://i.ibb.co/21x6Hgv5/g9.jpg", alt: "Gallery image 4" },
-    { src: "https://i.ibb.co/BVxqZMqW/g3.jpg", alt: "Gallery image 3" },
-    { src: "https://i.ibb.co/7N0LYyyL/g4.jpg",  alt: "Gallery image 5" },
-    { src: "https://i.ibb.co/fYgVkCBj/g2.jpg", alt: "Gallery image 2" },
-    { src: "https://i.ibb.co/Q7xm1tRg/g7.jpg", alt: "Gallery image 7" },
-    { src: "https://i.ibb.co/k6c7RdB0/g8.jpg", alt: "Gallery image 8" }, //changes done
-  ];
-
   const [hoveredImage, setHoveredImage] = useState<string | null>(null);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
@@ -23,25 +15,25 @@ const Gallery = () => {
     const handleMouseMove = (e: MouseEvent) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
     };
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
   return (
-    <section className="bg-gray-50 py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
+    <section className='bg-gray-50 py-20'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <h2 className='text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12'>
           Gallery
         </h2>
-        <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
+        <div className='grid grid-cols-3 md:grid-cols-5 gap-4'>
           {images.map((image, index) => (
             <motion.div
               key={index}
               className={`relative rounded-lg overflow-hidden shadow-md ${
-                index === 0 || index === 5 ? "md:col-span-2" : ""
-              } ${index === 2 || index === 6 ? "md:row-span-2" : ""}`}
+                index === 0 || index === 5 ? 'md:col-span-2' : ''
+              } ${index === 2 || index === 6 ? 'md:row-span-2' : ''}`}
               onMouseEnter={() => setHoveredImage(image.src)}
               onMouseLeave={() => setHoveredImage(null)}
               whileHover={{ scale: 1.05 }}
@@ -51,7 +43,7 @@ const Gallery = () => {
                 alt={image.alt}
                 width={800}
                 height={800}
-                className="w-full h-full object-cover"
+                className='w-full h-full object-cover'
               />
             </motion.div>
           ))}
@@ -60,18 +52,23 @@ const Gallery = () => {
       <AnimatePresence>
         {hoveredImage && (
           <motion.div
-            className="fixed top-0 left-0 z-50 pointer-events-none"
+            className='fixed top-0 left-0 z-50 pointer-events-none'
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1, x: cursorPosition.x + 20, y: cursorPosition.y - 150 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              x: cursorPosition.x + 20,
+              y: cursorPosition.y - 150,
+            }}
             exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ type: "spring", stiffness: 200, damping: 25 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 25 }}
           >
             <Image
               src={hoveredImage}
-              alt="Hovered image"
+              alt='Hovered image'
               width={300}
               height={200}
-              className="rounded-lg shadow-xl"
+              className='rounded-lg shadow-xl'
             />
           </motion.div>
         )}
