@@ -29,16 +29,12 @@ const Images = [
   },
   { src: 'https://i.ibb.co/k6c7RdB0/g8.jpg', alt: 'Gallery image 8' },
   {
-    src: 'https://i.ibb.co/bj9zzZC1/1756643322478.jpg',
+    src: 'https://i.ibb.co/CpyTb24H/Whats-App-Image-2025-10-15-at-23-31-14-94111107.jpg',
     alt: 'Gallery image 9',
   },
   {
-    src: 'https://i.ibb.co/CpyTb24H/Whats-App-Image-2025-10-15-at-23-31-14-94111107.jpg',
-    alt: 'Gallery image 10',
-  },
-  {
     src: 'https://i.ibb.co/gbPRrgs5/IMG-123124.jpg',
-    alt: 'Gallery image 11',
+    alt: 'Gallery image 10',
   },
 ];
 

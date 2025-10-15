@@ -1,13 +1,14 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProgramsOpen, setIsProgramsOpen] = useState(false);
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -21,21 +22,32 @@ const Navbar = () => {
     },
   ];
 
+  const programLinks = [
+    {
+      href: 'https://meta.wikimedia.org/wiki/Chai_with_Wiki',
+      label: 'chai with wiki',
+    },
+    {
+      href: 'https://meta.wikimedia.org/wiki/Road_to_wiki_program_UU',
+      label: 'Road to wiki',
+    },
+  ];
+
   const menuVariants = {
     hidden: {
       height: 0,
       opacity: 0,
       transition: {
-        when: "afterChildren",
+        when: 'afterChildren',
         staggerChildren: 0.05,
         staggerDirection: -1,
       },
     },
     visible: {
-      height: "auto",
+      height: 'auto',
       opacity: 1,
       transition: {
-        when: "beforeChildren",
+        when: 'beforeChildren',
         staggerChildren: 0.1,
       },
     },
@@ -44,6 +56,18 @@ const Navbar = () => {
   const menuItemVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0 },
+  };
+
+  const dropdownVariants = {
+    hidden: { opacity: 0, y: -10, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.2,
+      },
+    },
   };
 
   return (
@@ -83,6 +107,40 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+
+              {/* Programs Dropdown */}
+              <div
+                className='relative'
+                onMouseEnter={() => setIsProgramsOpen(true)}
+                onMouseLeave={() => setIsProgramsOpen(false)}
+              >
+                <button className='text-gray-700 hover:bg-gray-200 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium flex items-center gap-1'>
+                  Programs
+                  <FaChevronDown className='text-xs' />
+                </button>
+
+                <AnimatePresence>
+                  {isProgramsOpen && (
+                    <motion.div
+                      initial='hidden'
+                      animate='visible'
+                      exit='hidden'
+                      variants={dropdownVariants}
+                      className='absolute left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5'
+                    >
+                      {programLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
           </div>
           <div className='md:hidden flex items-center'>
@@ -121,6 +179,42 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Programs Section for Mobile */}
+              <motion.div variants={menuItemVariants}>
+                <button
+                  onClick={() => setIsProgramsOpen(!isProgramsOpen)}
+                  className='text-gray-700 hover:bg-gray-200 hover:text-gray-900 w-full text-left px-3 py-2 rounded-md text-base font-medium flex items-center justify-between'
+                >
+                  Programs
+                  <FaChevronDown
+                    className={`text-xs transition-transform ${
+                      isProgramsOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {isProgramsOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className='overflow-hidden pl-4'
+                    >
+                      {programLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className='text-gray-600 hover:bg-gray-100 hover:text-gray-900 block px-3 py-2 rounded-md text-sm'
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             </div>
           </motion.div>
         )}

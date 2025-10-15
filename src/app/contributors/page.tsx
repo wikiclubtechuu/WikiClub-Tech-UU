@@ -64,14 +64,14 @@ export default function ContributorsPage() {
                 .find((c: typeof contributors[number]) => c.id === selected)
                 ?.links.map((link: string, i: number) => (
                   <li key={i}>
-                    <a
+                    <Link
                       href={link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-700 hover:underline"
                     >
                       {link}
-                    </a>
+                    </Link>
                   </li>
                 ))}
             </ul>
@@ -89,14 +89,14 @@ export default function ContributorsPage() {
             If you want to record a contribution, please use the official submission form:
           </p>
 
-          <a
+          <Link
             href="https://forms.gle/NkaFccXFqPV6Ndgy8"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition"
           >
             Open Contribution Form
-          </a>
+          </Link>
         </div>
       </div>
     </div>
