@@ -149,9 +149,9 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
                 components={
                   {
                     code(props) {
-                      const { inline, className, children } = props;
+                      const { className, children } = props;
                       const match = /language-(\w+)/.exec(className || '');
-                      return !inline && match ? (
+                      return match ? (
                         <SyntaxHighlighter
                           style={oneDark as Record<string, React.CSSProperties>}
                           language={match[1]}
@@ -170,8 +170,8 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
                       return (
                         <span className='block my-8'>
                           <Image
-                            src={src}
-                            alt={alt || ''}
+                            src={src as string}
+                            alt={alt ?? ''}
                             width={800}
                             height={500}
                             className='rounded-lg shadow-lg w-full h-auto'
