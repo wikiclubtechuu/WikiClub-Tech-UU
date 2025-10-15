@@ -14,6 +14,7 @@ const Navbar = () => {
     { href: '/blogs', label: 'Blogs' },
     { href: '/teams', label: 'Teams' },
     { href: '/validator', label: 'Validator' },
+    { href: '/contributors', label: 'Contribution Board' },
     {
       href: 'https://forms.gle/FGoyrEHC1CuP9hPSA',
       label: 'Join Us',
