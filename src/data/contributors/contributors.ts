@@ -8,13 +8,13 @@ export interface Contributor {
 export const contributors: Contributor[] = [
   {
     id: "1",
-    name: "Kavaljeet Singh",
-    merged: 3,
+    name: "Mohd Shadab",
+    merged: 4,
     links: ["https://github.com/wiki-club-tech-uu/project/pull/101"],
   },
   {
     id: "2",
-    name: "Moh. Shadab",
+    name: "Kavaljeet Singh",
     merged: 3,
     links: ["https://github.com/wiki-club-tech-uu/project/pull/98"],
   },
