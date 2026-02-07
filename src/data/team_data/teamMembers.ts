@@ -24,6 +24,17 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "2",
+    name: "Shrey Jaiswal",
+    role: "Volunteer",
+    roleType: "volunteer",
+    image: "/team/Shrey.jpg",
+    email: "5aprilshrey@gmail.com",
+    linkedin: "https://www.linkedin.com/in/shreyjaiswal1/",
+    github: "https://github.com/ShreyJaiswal1",
+    bio: "",
+  },
+  {
+    id: "3",
     name: "Anupam Yadav",
     role: "Volunteer",
     roleType: "volunteer",
@@ -33,17 +44,7 @@ export const teamMembers: TeamMember[] = [
     github: "https://github.com/AnupamYadavAnurag",
     bio: "",
   },
-  {
-    id: "3",
-    name: "Shrey Jaiswal ",
-    role: "Volunteer",
-    roleType: "volunteer",
-    image: "/team/Shrey.jpg",
-    email: "5aprilshrey@gmail.com",
-    linkedin: "https://www.linkedin.com/in/shreyjaiswal1/",
-    github: "https://github.com/ShreyJaiswal1",
-    bio: "",
-  },
+
   {
     id: "4",
     name: "Rehan Khan",
@@ -79,7 +80,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "7",
-    name: "Kavaljeet Singh ",
+    name: "Kavaljeet Singh",
     role: "Tech-Lead",
     roleType: "lead",
     image: "/team/KAVALJEET SINGH.jpg",
@@ -101,7 +102,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "9",
-    name: "Unnati Kesarwani ",
+    name: "Unnati Kesarwani",
     role: "Outreach & Management Lead",
     roleType: "lead",
     image: "/team/Unnati.png",
@@ -123,7 +124,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "11",
-    name: "Sejal kesarwani ",
+    name: "Sejal Kesarwani",
     role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Sejal Kesarwani.jpg",
@@ -145,7 +146,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "13",
-    name: "Saumya Rawat ",
+    name: "Saumya Rawat",
     role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Saumya Rawat.jpg",
@@ -156,7 +157,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "14",
-    name: "Siddharth Singh ",
+    name: "Siddharth Singh",
     role: "Design & Social Media Lead",
     roleType: "lead",
     image: "/team/Siddharth Singh.png",
@@ -189,7 +190,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "17",
-    name: "Sanskar Dubey ",
+    name: "Sanskar Dubey",
     role: "Mentor",
     roleType: "mentor",
     image: "/team/Sanskar Dubey.jpg",
@@ -211,7 +212,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "19",
-    name: "Ayush Tiwari ",
+    name: "Ayush Tiwari",
     role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Ayush WikiClubTech-UU.jpg",
@@ -237,9 +238,130 @@ export const teamMembers: TeamMember[] = [
     role: "Project Coordinator Wiki@IIIT Hyderabad",
     roleType: "coordinator",
     image: "/team/ankitsir.png",
-    email: "",
+    email: "ankitkumarverma2003@gmail.com",
     linkedin: "https://www.linkedin.com/in/ankit-kumar-verma-081804160",
     github: "",
-    bio: "",
+    bio: "Founder of GDG prayagraj, Project Coordinator of Wiki@IIIT Hyderabad, and a passionate tech enthusiast. With a strong background in software development and community building, Ankit has been instrumental in fostering a collaborative environment for tech enthusiasts at IIIT Hyderabad. His dedication to promoting open-source technologies and empowering the next generation of developers has made him a key figure in the tech community. Ankit's vision is to create a thriving ecosystem where knowledge sharing and innovation go hand in hand, driving positive change in the world of technology.",
+  },
+  {
+    id: "20",
+    name: "Shami Verma",
+    role: "Volulnteer",
+    roleType: "volunteer",
+    image: "/team/Shami verma.jpg",
+    email: "shamiverma2307@gmail.com",
+    linkedin: "https://www.linkedin.com/in/shami-v-37195827a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com/Shamiverma/internship.git",
+    bio: ""
+  },
+  {
+    id: "21",
+    name: "Syed Sohrab Haider Rizvi",
+    role: "Volulnteer",
+    roleType: "volunteer",
+    image: "/team/Sohrab Rizvi.jpg",
+    email: "sohrab.june17@gmail.com",
+    linkedin: "https://linkedin.com/in/syed-sohrab-haider-rizvi-589a91385",
+    github: "https://github.com/StormZShr",
+    bio: ""
+  },
+  {
+    id: "22",
+    name: "Manvi Keshari",
+    role: "Volulnteer",
+    roleType: "volunteer",
+    image: "/team/Manvi Keshari.jpg",
+    email: "manvikeshari06@gmail.com",
+    linkedin: "https://www.linkedin.com/in/manvi-keshari-287aa2321",
+    github: "https://github.com/manvikeshari",
+    bio: ""
+  },
+  {
+    id: "23",
+    name: "Khushi Verma",
+    role: "Volulnteer",
+    roleType: "volunteer",
+    image: "/team/Khushi Verma.jpg",
+    email: "khushi753verma@gmail.com",
+    linkedin: "https://www.linkedin.com/in/khushi-verma-818023322",
+    github: "https://github.com/khushi0753",
+    bio: ""
+  },
+  {
+    id: "24",
+    name: "Anuj kesarwani",
+    role: "Volulnteer",
+    roleType: "volunteer",
+    image: "/team/Anuj kesarwani.jpg",
+    email: "anujkesarwani25@gmail.com",
+    linkedin: "https://www.linkedin.com/in/anuj-kesarwani-627b3a334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com/anujkesarwani25",
+    bio: ""
+  },
+  {
+    id: "25",
+    name: "Rishang mishra",
+    role: "Volulnteer",
+    roleType: "volunteer",
+    image: "/team/Rishang mishra.jpeg",
+    email: "mishrarishang21@gmail.com",
+    linkedin: "https://www.linkedin.com/in/rishang196",
+    github: "https://github.com/Rishang196",
+    bio: ""
+  },
+  {
+    id: "26",
+    name: "Abhinisht Singh",
+    role: "Volulnteer",
+    roleType: "volunteer",
+    image: "/team/Abhinisht Singh.jpg",
+    email: "a9793379476@gmail.com",
+    linkedin: "https://linkedin.com/in/abhinisht-singh-1271ab311",
+    github: "https://github.com/Abhinisht",
+    bio: ""
+  },
+  {
+    id: "27",
+    name: "Ashutosh Mishra",
+    role: "Volulnteer",
+    roleType: "volunteer",
+    image: "/team/Ashutosh Mishra.jpg",
+    email: "c.t.o.curelex26@gmail.com",
+    linkedin: "https://www.linkedin.com/in/ashutosh-mishra-841408324",
+    github: "https://github.com/Ashutosh26-uu",
+    bio: ""
+  },
+  {
+    id: "28",
+    name: "SNEHA GUPTA",
+    role: "Volulnteer",
+    roleType: "volunteer",
+    image: "/team/Sneha Gupta.jpeg",
+    email: "711snehagupta@gmail.com",
+    linkedin: "https://www.linkedin.com/in/sneha-gupta-045303318",
+    github: "https://github.com/711snehagupta",
+    bio: ""
+  },
+  {
+    id: "29",
+    name: "Prakhar Rai",
+    role: "Volulnteer",
+    roleType: "volunteer",
+    image: "/team/Prakhar Rai.jpg",
+    email: "prakharraiuu@gmail.com",
+    linkedin: "https://www.linkedin.com/in/prakhar-rai-9ab284386?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com/prakharraiuu",
+    bio: ""
+  },
+  {
+    id: "30",
+    name: "Trisha Mishra",
+    role: "Volulnteer",
+    roleType: "volunteer",
+    image: "/team/Trisha Mishra.jpg",
+    email: "trishamishra371@gmail.com",
+    linkedin: "https://www.linkedin.com/in/trisha-mishra-515473316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "",
+    bio: ""
   }
 ];
