@@ -246,7 +246,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "20",
     name: "Shami Verma",
-    role: "Volulnteer",
+    role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Shami verma.jpg",
     email: "shamiverma2307@gmail.com",
@@ -257,7 +257,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "21",
     name: "Syed Sohrab Haider Rizvi",
-    role: "Volulnteer",
+    role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Sohrab Rizvi.jpg",
     email: "sohrab.june17@gmail.com",
@@ -268,7 +268,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "22",
     name: "Manvi Keshari",
-    role: "Volulnteer",
+    role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Manvi Keshari.jpg",
     email: "manvikeshari06@gmail.com",
@@ -279,7 +279,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "23",
     name: "Khushi Verma",
-    role: "Volulnteer",
+    role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Khushi Verma.jpg",
     email: "khushi753verma@gmail.com",
@@ -290,7 +290,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "24",
     name: "Anuj kesarwani",
-    role: "Volulnteer",
+    role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Anuj Kesarwani.jpg",
     email: "anujkesarwani25@gmail.com",
@@ -301,7 +301,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "25",
     name: "Rishang mishra",
-    role: "Volulnteer",
+    role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Rishang Mishra.jpeg",
     email: "mishrarishang21@gmail.com",
@@ -312,7 +312,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "26",
     name: "Abhinisht Singh",
-    role: "Volulnteer",
+    role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Abhinisht Singh.jpg",
     email: "a9793379476@gmail.com",
@@ -323,7 +323,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "27",
     name: "Ashutosh Mishra",
-    role: "Volulnteer",
+    role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Ashutosh Mishra.jpg",
     email: "c.t.o.curelex26@gmail.com",
@@ -333,8 +333,8 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "28",
-    name: "SNEHA GUPTA",
-    role: "Volulnteer",
+    name: "Sneha Gupta",
+    role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Sneha Gupta.jpeg",
     email: "711snehagupta@gmail.com",
@@ -345,7 +345,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "29",
     name: "Prakhar Rai",
-    role: "Volulnteer",
+    role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Prakhar Rai.jpg",
     email: "prakharraiuu@gmail.com",
@@ -356,12 +356,23 @@ export const teamMembers: TeamMember[] = [
   {
     id: "30",
     name: "Trisha Mishra",
-    role: "Volulnteer",
+    role: "Volunteer",
     roleType: "volunteer",
     image: "/team/Trisha Mishra.jpg",
     email: "trishamishra371@gmail.com",
     linkedin: "https://www.linkedin.com/in/trisha-mishra-515473316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     github: "",
+    bio: ""
+  },
+  {
+    id: "31",
+    name: "Mahin Farooqui",
+    role: "Volunteer",
+    roleType: "volunteer",
+    image: "/team/Mahin Farooqui.jpeg",
+    email: "farooquimahin30@gmail.com",
+    linkedin: "www.linkedin.com/in/mahin-farooquiii",
+    github: "https://github.com/farooquimahin",
     bio: ""
   }
 ];
