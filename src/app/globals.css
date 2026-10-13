@@ -228,3 +228,307 @@ body {
     @apply border border-gray-300 px-4 py-3 text-gray-700;
   }
 }
+/* =========================================
+   WikiClub Tech — Global UI Polish
+   ========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+/* Better text rendering */
+body,
+button,
+input,
+textarea,
+select {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Consistent keyboard accessibility */
+:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 3px;
+}
+
+/* Prevent accidental image overflow */
+img {
+  max-width: 100%;
+}
+
+/* Cleaner selection */
+::selection {
+  background: rgba(14, 165, 233, 0.18);
+  color: #111827;
+}
+
+/* Better scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Respect reduced-motion accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Small-screen spacing protection */
+@media (max-width: 640px) {
+  section {
+    scroll-margin-top: 72px;
+  }
+}
+/* =========================================================
+   WIKICLUB TECH — HOMEPAGE COLOR SYSTEM
+   Inspired by the new homepage reference design
+   ========================================================= */
+
+:root {
+  --wc-navy: #0b2540;
+  --wc-navy-light: #163a5c;
+
+  --wc-blue: #1689d8;
+  --wc-blue-light: #eaf6ff;
+
+  --wc-cyan: #16b8c4;
+  --wc-teal: #19b99a;
+
+  --wc-mint: #effbf8;
+  --wc-mint-dark: #dff6f0;
+
+  --wc-purple: #7c5ce6;
+  --wc-purple-light: #f1edff;
+
+  --wc-yellow: #f4c84a;
+  --wc-yellow-light: #fff8df;
+
+  --wc-red: #ef5b5b;
+
+  --wc-white: #ffffff;
+  --wc-light: #f7fbff;
+  --wc-light-blue: #f0f8fd;
+
+  --wc-text: #172b43;
+  --wc-text-secondary: #607087;
+  --wc-border: #e4edf5;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+  background: var(--wc-white);
+  color: var(--wc-text);
+}
+
+
+/* =========================================================
+   LIGHT SECTION COLORS
+   ========================================================= */
+
+.bg-gray-50 {
+  background-color: var(--wc-light) !important;
+}
+
+.bg-gray-100 {
+  background-color: var(--wc-light-blue) !important;
+}
+
+.bg-white {
+  background-color: var(--wc-white);
+}
+
+
+/* =========================================================
+   TEXT COLORS
+   ========================================================= */
+
+.text-gray-900 {
+  color: var(--wc-navy) !important;
+}
+
+.text-gray-800 {
+  color: #19324d !important;
+}
+
+.text-gray-700 {
+  color: #40566e !important;
+}
+
+.text-gray-600 {
+  color: var(--wc-text-secondary) !important;
+}
+
+.text-gray-500 {
+  color: #718198 !important;
+}
+
+
+/* =========================================================
+   BLUE ACCENTS
+   ========================================================= */
+
+.text-sky-600 {
+  color: var(--wc-blue) !important;
+}
+
+.text-sky-500 {
+  color: #2198e0 !important;
+}
+
+.bg-sky-50 {
+  background-color: var(--wc-blue-light) !important;
+}
+
+.bg-sky-100 {
+  background-color: #dff2ff !important;
+}
+
+.bg-sky-500 {
+  background-color: var(--wc-blue) !important;
+}
+
+.bg-sky-600 {
+  background-color: #1178c2 !important;
+}
+
+
+/* =========================================================
+   CYAN / TEAL
+   ========================================================= */
+
+.text-cyan-400 {
+  color: var(--wc-teal) !important;
+}
+
+.text-cyan-500 {
+  color: var(--wc-cyan) !important;
+}
+
+.bg-cyan-500 {
+  background-color: var(--wc-cyan) !important;
+}
+
+.bg-cyan-100 {
+  background-color: #dff8f5 !important;
+}
+
+
+/* =========================================================
+   BORDERS
+   ========================================================= */
+
+.border-gray-100 {
+  border-color: var(--wc-border) !important;
+}
+
+.border-gray-200 {
+  border-color: #dfe9f2 !important;
+}
+
+.border-sky-100 {
+  border-color: #d7edf9 !important;
+}
+
+
+/* =========================================================
+   SOFT CARD SHADOWS
+   ========================================================= */
+
+.shadow-lg,
+.shadow-xl {
+  --tw-shadow-color: rgba(11, 37, 64, 0.08);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.bg-gray-900 {
+  background-color: var(--wc-navy) !important;
+}
+
+.text-gray-400 {
+  color: #a9b8c8 !important;
+}
+
+.text-gray-500 {
+  color: #74879b !important;
+}
+
+.border-gray-800 {
+  border-color: #193b5b !important;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTONS
+   ========================================================= */
+
+.bg-gradient-to-r.from-cyan-500.to-sky-500 {
+  background-image: linear-gradient(
+    90deg,
+    var(--wc-teal),
+    var(--wc-blue)
+  ) !important;
+}
+
+
+/* =========================================================
+   HOVER COLORS
+   ========================================================= */
+
+.hover\:text-sky-400:hover {
+  color: #42a9e8 !important;
+}
+
+.hover\:text-sky-600:hover {
+  color: var(--wc-blue) !important;
+}
+
+.hover\:bg-sky-50:hover {
+  background-color: var(--wc-blue-light) !important;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: #cceeff;
+  color: var(--wc-navy);
+}
