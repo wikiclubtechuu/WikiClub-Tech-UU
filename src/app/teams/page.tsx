@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Archive, ArrowDown, ArrowUp, Crown, Users } from 'lucide-react';
 import TeamMemberCard from '@/components/team/TeamMemberCard';
-import { previousTeamMembers } from '@/data/team_data/teamMembers';
+import { previousTeamMembers } from '@/data/team_data/previousTeamMembers';
 import { currentRoster, type CurrentTeamMember } from '@/data/team_data/currentRoster';
 import { currentVolunteerDemoMembers } from '@/data/team_data/currentVolunteerDemoMembers';
 import { founders } from '@/data/team_data/founders';
