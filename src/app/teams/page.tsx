@@ -34,7 +34,7 @@ const TeamSections = ({ members, idPrefix }: { members: CurrentTeamMember[]; idP
       const roleMembers = membersByRole[role];
       if (!roleMembers?.length) return null;
       const gridClass = role === 'mentor'
-        ? 'mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2'
+        ? 'mx-auto max-w-5xl space-y-6'
         : role === 'envoy'
         ? 'mx-auto flex max-w-7xl flex-wrap justify-center gap-8'
         : role === 'volunteer'
