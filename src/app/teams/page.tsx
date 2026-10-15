@@ -1,5 +1,6 @@
 'use client';
 
+// WikiClub Tech-UU 2026–27 Teams page — redeploy marker for the current production page.
 import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Archive, ArrowDown, ArrowUp, Crown, Users } from 'lucide-react';
