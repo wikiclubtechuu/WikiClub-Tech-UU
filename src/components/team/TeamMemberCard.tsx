@@ -11,6 +11,7 @@ interface TeamMemberCardProps {
   linkedin?: string;
   github?: string;
   metaWiki?: string;
+  website?: string;
   bio?: string;
   team?: string;
 }
@@ -27,7 +28,7 @@ const SocialLink = ({ href, icon: Icon, label }: { href: string; icon: React.Com
   </motion.a>
 );
 
-const TeamMemberCard = ({ name, role, roleType, image, email, linkedin, github, metaWiki, bio, team }: TeamMemberCardProps) => {
+const TeamMemberCard = ({ name, role, roleType, image, email, linkedin, github, metaWiki, website, bio, team }: TeamMemberCardProps) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const isFeatureCard = roleType === 'founder' || roleType === 'coordinator' || roleType === 'mentor';
   const isCompactCard = roleType === 'volunteer';
@@ -38,6 +39,7 @@ const TeamMemberCard = ({ name, role, roleType, image, email, linkedin, github, 
     {linkedin && <SocialLink href={linkedin} icon={Linkedin} label='LinkedIn' />}
     {github && <SocialLink href={github} icon={Github} label='GitHub' />}
     {metaWiki && <SocialLink href={metaWiki} icon={Globe} label='Meta-Wiki' />}
+    {website && <SocialLink href={website} icon={Globe} label='Website' />}
   </div>;
 
   const roleBadge = <span className='rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700'>{team ? `${team} ${role}` : role}</span>;
