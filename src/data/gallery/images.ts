@@ -36,6 +36,18 @@ const Images = [
     src: 'https://i.ibb.co/gbPRrgs5/IMG-123124.jpg',
     alt: 'Gallery image 10',
   },
+  {
+    src: 'https://i.ibb.co/ccSd502V/Robo-War-Winners-Team-2-at-the-Road-to-Wiki-Cohort-2-0-Graduation-Event-Gurugram-01.jpg',
+    alt: 'Robo War Winners Team 2 at the Road to Wiki Cohort 2.0 Graduation Event',
+  },
+  {
+    src: 'https://i.ibb.co/JjKD7TWD/Group-photo-of-participants-at-the-Road-to-Wiki-Cohort-2-0-Graduation-Event-Gurugram-2026-04.jpg',
+    alt: 'Group photo of participants at the Road to Wiki Cohort 2.0 Graduation Event',
+  },
+  {
+    src: 'https://i.ibb.co/KxKqMStR/70276e74-4ebd-4f17-8697-63ad9449848e.jpg',
+    alt: 'WikiClub event highlights',
+  },
 ];
 
 export default Images;

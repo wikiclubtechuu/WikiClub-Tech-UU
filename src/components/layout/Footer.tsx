@@ -165,12 +165,6 @@ const Footer = () => {
                   Programs
                 </Link>
 
-                <Link
-                  href="/events"
-                  className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-300"
-                >
-                  Events
-                </Link>
 
               </div>
             </div>

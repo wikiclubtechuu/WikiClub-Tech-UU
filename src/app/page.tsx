@@ -17,9 +17,9 @@ export default function Home() {
       <Hero />
       <WhoWeAre />
       <WhatWeDo />
-      <Gallery />
       <CommunityImpact />
       <Socials />
+      <Gallery />
     </main>
   );
 }

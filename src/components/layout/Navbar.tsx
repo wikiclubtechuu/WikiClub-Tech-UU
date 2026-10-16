@@ -20,8 +20,8 @@ const navItems = [
     href: "/teams",
   },
   {
-    label: "Events",
-    href: "/events",
+    label: "Blogs",
+    href: "/blogs",
   },
   {
     label: "Achievements",
@@ -41,10 +41,6 @@ const menuItems = [
   {
     label: "Programs",
     href: "/programs",
-  },
-  {
-    label: "Blogs",
-    href: "/blogs",
   },
   {
     label: "Join Us",
