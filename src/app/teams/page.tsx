@@ -1,5 +1,6 @@
 'use client';
 
+// WikiClub Tech-UU 2026–27 Teams page — redeploy marker for the current production page.
 import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Archive, ArrowDown, ArrowUp, Crown, Users } from 'lucide-react';
@@ -33,7 +34,7 @@ const TeamSections = ({ members, idPrefix }: { members: CurrentTeamMember[]; idP
       const roleMembers = membersByRole[role];
       if (!roleMembers?.length) return null;
       const gridClass = role === 'mentor'
-        ? 'mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2'
+        ? 'mx-auto max-w-5xl space-y-6'
         : role === 'envoy'
         ? 'mx-auto flex max-w-7xl flex-wrap justify-center gap-8'
         : role === 'volunteer'

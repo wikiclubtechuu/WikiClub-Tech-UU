@@ -8,17 +8,37 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Teams", href: "/teams" },
-  { label: "Events", href: "/events" },
-  { label: "Achievements", href: "/contributors" },
-  { label: "Certify", href: "/validator" },
-  { label: "Help Desk", href: "/pyq" },
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "Teams",
+    href: "/teams",
+  },
+  {
+    label: "Blogs",
+    href: "/blogs",
+  },
+  {
+    label: "Achievements",
+    href: "/contributors",
+  },
+  {
+    label: "Certify",
+    href: "/validator",
+  },
+  {
+    label: "Help Desk",
+    href: "/pyq",
+  },
 ];
 
 const menuItems = [
-  { label: "Programs", href: "/programs" },
-  { label: "Blogs", href: "/blogs" },
+  {
+    label: "Programs",
+    href: "/programs",
+  },
   {
     label: "Join Us",
     href: "https://forms.gle/FGoyrEHC1CuP9hPSA",

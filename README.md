@@ -96,9 +96,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 📬 Get In Touch
 
 - **University**: United University, Prayagraj
-- **Repository**: [github.com/ShreyJaiswal1/wikiclub-tech](https://github.com/ShreyJaiswal1/wikiclub-tech)
-- **Issues**: Found a bug? [Create an issue](https://github.com/ShreyJaiswal1/wikiclub-tech/issues)
-- **Discussions**: Join our [GitHub Discussions](https://github.com/ShreyJaiswal1/wikiclub-tech/discussions)
+- **Repository**: [github.com/lazyshrey/WikiClub-Tech-UU](https://github.com/lazyshrey/WikiClub-Tech-UU)
+- **Issues**: Found a bug? [Create an issue](https://github.com/lazyshrey/WikiClub-Tech-UU/issues)
+- **Discussions**: Join our [GitHub Discussions](https://github.com/lazyshrey/WikiClub-Tech-UU/discussions)
 
 ---
 
