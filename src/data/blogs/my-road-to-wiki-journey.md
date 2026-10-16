@@ -9,15 +9,17 @@ tags: ["wikimedia", "road-to-wiki", "open-source", "community", "event"]
 
 > *"A community is a loop, not a line. Students enter as learners, grow into active contributors, and return as mentors who empower the next generation."*
 
-Every open-source community thrives on continuity. From October 2 to October 4, 2026, **WikiClub Tech India**, under the umbrella of **The Open Knowledge Initiatives (OKI) at IIIT Hyderabad** and supported by the **Wikimedia Foundation**, hosted the **Road to Wiki Graduation 2026 (The Celebration Day)** at Gurugram.
+Every open-source community thrives on continuity. From October 2 to October 4, 2026, **[WikiClub Tech India](https://meta.wikimedia.org/wiki/IIITH-OKI/WikiClub_Tech)**, under the umbrella of **The Open Knowledge Initiatives (OKI) at IIIT Hyderabad** and supported by the **Wikimedia Foundation**, hosted the **[Road to Wiki Graduation 2026 (The Celebration Day)](https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech/Road_To_Wiki/The_Celebration_Day)** at Gurugram.
 
-The event brought together Cohort 2 graduates from engineering colleges across India—including students from United University—alongside dedicated mentors, Wikimedia community leaders, and industry practitioners for three days of hands-on building, knowledge sharing, and milestone celebration.
+The event brought together **[Road to Wiki Cohort 2026](https://meta.wikimedia.org/wiki/Road_to_Wiki/Cohort_2026)** graduates from engineering colleges across India—including students from United University—alongside dedicated mentors, Wikimedia community leaders, and industry practitioners for three days of hands-on building, knowledge sharing, and milestone celebration.
 
 ---
 
 ## The Vision: Bridging Academia and Open Source
 
-The **Road to Wiki** initiative was designed with a focused mission: to bridge the gap between academic classrooms and large-scale open-source projects like **MediaWiki**. 
+The **[Road to Wiki](https://meta.wikimedia.org/wiki/Road_to_Wiki/Cohort_2026)** initiative was designed with a focused mission: to bridge the gap between academic classrooms and large-scale open-source projects like **MediaWiki**. 
+
+Through student-led initiatives like **[WikiClub Tech](https://meta.wikimedia.org/wiki/IIITH-OKI/WikiClub_Tech)**, participants gain practical experience by actively contributing to Wikimedia tools, documentation, and software libraries. 
 
 While India holds an immense pool of technical talent, structured entry points into global open-source ecosystems are often limited for students in Tier-2 and Tier-3 institutions. Road to Wiki established transparent, guided learning tracks where participants learned:
 
@@ -82,6 +84,14 @@ For students and developers looking to begin their journey in open source, the R
 2. **Build and Ship Real Solutions**: Developing a functional tool, SDK, or bug fix teaches practical software engineering faster than passive tutorials.
 3. **Open Source Is a Community Effort**: Technical infrastructure is essential, but human connection, documentation, and mentorship are what keep open-knowledge ecosystems alive.
 4. **Consistency Outweighs Big Moments**: Long-term impact is built through continuous small contributions, peer reviews, and helping others onboard.
+
+---
+
+## Community Documentation & References
+
+- **Program Overview**: [Road to Wiki Cohort 2026 on Meta-Wiki](https://meta.wikimedia.org/wiki/Road_to_Wiki/Cohort_2026)
+- **Community Hub**: [WikiClub Tech on Meta-Wiki (OKI - IIIT Hyderabad)](https://meta.wikimedia.org/wiki/IIITH-OKI/WikiClub_Tech)
+- **Event Documentation**: [Road to Wiki The Celebration Day on Meta-Wiki](https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech/Road_To_Wiki/The_Celebration_Day)
 
 ---
 
