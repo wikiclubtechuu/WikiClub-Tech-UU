@@ -1,0 +1,235 @@
+/* =========================================================================
+   STUDENT HELP DESK THEME  (matches the home page)
+   Applies to every page under /help-desk (loaded once by help-desk/layout.tsx).
+
+   >>> To change the brand colours, edit the two hex values below. <<<
+   ========================================================================= */
+
+.hd-theme {
+  --hd-blue: #0ea5e9;   /* matches the "Join Us" button on the home page */
+  --hd-green: #2e9e5b;  /* logo green */
+
+  /* Derived from the two above, so you never edit these. */
+  --hd-teal: color-mix(in srgb, var(--hd-blue) 50%, var(--hd-green));
+  --hd-navy: color-mix(in srgb, var(--hd-blue) 55%, #0b1b3a);
+
+  --hd-ink: #0f172a;
+  --hd-muted: #475569;
+  --hd-edge: #e6ecf2;
+
+  --accent: var(--hd-blue);
+  background: #ffffff;
+}
+
+/* Accent colour for a section or card. Put one of these classes on any element. */
+.hd-accent-blue  { --accent: var(--hd-blue); }
+.hd-accent-green { --accent: var(--hd-green); }
+.hd-accent-teal  { --accent: var(--hd-teal); }
+.hd-accent-navy  { --accent: var(--hd-navy); }
+/* OPTIONAL: src/lib/faq-data.ts gives its last category the class "hd-accent-amber", which was
+   never defined in the old repo (so it showed the default blue). Uncomment to make it amber:
+.hd-accent-amber { --accent: #d97706; }
+*/
+
+.hd-theme,
+[class*="hd-accent-"] {
+  --accent-soft: color-mix(in srgb, var(--accent) 10%, white);
+  --accent-line: color-mix(in srgb, var(--accent) 30%, white);
+  --accent-strong: color-mix(in srgb, var(--accent) 78%, black);
+}
+
+/* =========================================================================
+   BACKGROUND: the home page hero. Soft blue / green / cream glow, a faint
+   grid, both fading out towards the bottom.
+   ========================================================================= */
+.hd-hero-bg {
+  height: 640px;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(210, 238, 250, 0.75) 0%, rgba(210, 238, 250, 0) 42%),
+    radial-gradient(circle at 85% 10%, rgba(215, 250, 225, 0.8) 0%, rgba(215, 250, 225, 0) 45%),
+    radial-gradient(circle at 80% 90%, rgba(255, 245, 235, 0.65) 0%, rgba(255, 245, 235, 0) 40%),
+    #f8fcfa;
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent);
+  mask-image: linear-gradient(to bottom, black 75%, transparent);
+}
+.hd-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.12) 1px, transparent 1px);
+  background-size: 52px 52px;
+  background-position: center center;
+}
+
+/* =========================================================================
+   ENTRANCE ANIMATIONS used by help-desk/template.tsx and the Meta page.
+   In the old repo these lived in the global stylesheet. The client's new globals.css does not
+   have them, so they are defined HERE, scoped to .hd-theme, to avoid editing any client file.
+   Keyframes are prefixed "hd-" so they can never clash with names the client adds later.
+   ========================================================================= */
+@keyframes hd-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes hd-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.hd-theme .animate-fade-up { animation: hd-fade-up 0.6s ease-out both; }
+.hd-theme .animate-fade-in { animation: hd-fade-in 0.4s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hd-theme .animate-fade-up,
+  .hd-theme .animate-fade-in { animation: none; }
+}
+
+/* ---------- Text ---------- */
+.hd-title { color: var(--hd-ink); }
+.hd-muted { color: var(--hd-muted); }
+
+/* Big, heavy, tightly spaced headings like the home page. */
+.hd-display {
+  color: var(--hd-ink);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
+}
+
+/* The small cream badge above headings (like "The Beginning" on the home page). */
+.hd-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid #f1deb0;
+  background: #fffaf0;
+  color: #b45309;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* ---------- Surfaces ---------- */
+.hd-panel {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--hd-edge);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px -22px rgba(15, 23, 42, 0.25);
+}
+
+.hd-card {
+  background: #fff;
+  border: 1px solid var(--hd-edge);
+  border-top: 3px solid var(--accent);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px -22px rgba(15, 23, 42, 0.25);
+  transition: transform 0.3s cubic-bezier(0.34, 1.3, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+/* Same lift as the home page cards: up 3px and a hair bigger. */
+.hd-card:hover,
+.hd-card:focus-within {
+  transform: translateY(-3px) scale(1.009);
+  border-color: var(--accent-line);
+  border-top-color: var(--accent);
+  box-shadow: 0 18px 36px -18px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+/* ---------- Small pieces ---------- */
+.hd-icon  { background: var(--accent-soft); color: var(--accent); }
+.hd-chip  { background: var(--accent-soft); color: var(--accent-strong); }
+.hd-pill  { background: var(--accent); color: #fff; }
+.hd-count { background: var(--accent-soft); color: var(--accent-strong); }
+.hd-more  { color: var(--accent-strong); transition: background 0.2s ease; }
+.hd-more:hover { background: var(--accent-soft); }
+.hd-line  { background: linear-gradient(90deg, var(--accent-line), transparent); }
+
+/* Buttons behave like the home page: grow 5% on hover, shrink 5% on press. */
+.hd-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.6rem;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hd-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.hd-btn:active { transform: scale(0.95); }
+
+.hd-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--hd-edge);
+  background: #fff;
+  color: var(--hd-ink);
+  border-radius: 0.6rem;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.hd-ghost:hover { background: var(--accent-soft); border-color: var(--accent-line); }
+.hd-ghost:focus-visible,
+.hd-btn:focus-visible { outline: 3px solid color-mix(in srgb, var(--hd-blue) 40%, transparent); outline-offset: 2px; }
+
+.hd-back-link { color: var(--hd-blue); }
+.hd-back-link:hover { text-decoration: underline; }
+
+.hd-field {
+  border: 1px solid var(--hd-edge);
+  background: #f8fafc;
+  color: var(--hd-ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.hd-field:focus {
+  outline: none;
+  border-color: var(--hd-blue);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--hd-blue) 25%, transparent);
+}
+
+.hd-edge-y { border-top: 1px solid var(--hd-edge); border-bottom: 1px solid var(--hd-edge); }
+
+.hd-banner { background: linear-gradient(120deg, var(--hd-blue), var(--hd-green)); }
+.hd-avatar { background: linear-gradient(135deg, var(--hd-blue), var(--hd-green)); }
+
+/* ---------- Social boxes ---------- */
+.hd-social-link { border-radius: 1.5rem; }
+.hd-social-link:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+.hd-social-hint {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 9999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+.hd-social:hover .hd-social-hint,
+.hd-social:focus-within .hd-social-hint { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hd-card,
+  .hd-btn,
+  .hd-social-hint { transition: none; }
+  .hd-card:hover,
+  .hd-card:focus-within,
+  .hd-btn:hover { transform: none; }
+}
