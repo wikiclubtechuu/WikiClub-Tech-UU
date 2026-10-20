@@ -1,10 +1,11 @@
 // FILE: src/app/api/pyqs/file/[id]/route.ts   (route: GET /api/pyqs/file/<imageKitFileId>)
 // PURPOSE: Streams one paper (PDF or image) through our own domain, so the ImageKit address and
 // private key are never exposed to the browser. The viewer page points its <iframe>/<img> here.
+// Only files inside the PYQ folder (IMAGEKIT_PYQ_FOLDER) are served, never anything else in the account.
 // Next.js 15+/16: `params` is a Promise and must be awaited (already handled below).
 
 import { NextResponse } from "next/server";
-import { AUTH } from "@/lib/imagekit-papers";
+import { AUTH, ROOT } from "@/lib/imagekit-papers";
 
 export async function GET(
   _request: Request,
@@ -25,6 +26,11 @@ export async function GET(
     if (!meta.ok) return new NextResponse("Not found", { status: 404 });
     const file = await meta.json();
 
+    // Refuse files that are not inside the PYQ folder.
+    if (!String(file.filePath || "").startsWith(ROOT + "/")) {
+      return new NextResponse("Not found", { status: 404 });
+    }
+
     const upstream = await fetch(file.url, { cache: "no-store" });
     if (!upstream.ok || !upstream.body) {
       return new NextResponse("Could not load paper", { status: 502 });
@@ -41,4 +47,4 @@ export async function GET(
   } catch {
     return new NextResponse("Could not load paper", { status: 500 });
   }
-}
+}

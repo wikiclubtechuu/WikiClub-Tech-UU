@@ -1,7 +1,7 @@
 // FILE: src/app/help-desk/page.tsx   (route: /help-desk)
 // PURPOSE: The Student Help Desk home page ("hub"). Shows a hero heading and one card per tool:
-//   PYQs, Social Media, Contact / Feedback, FAQs, Meta Pages, plus an "Upcoming Tools" card
-//   that is a non-clickable placeholder for future features, and a chatbot placeholder panel.
+//   PYQs, Social Media, Contact / Feedback, FAQs, Meta Pages, plus an "Upcoming Tools" card.
+//   Cards with href: null are non-clickable placeholders ("Coming soon").
 // This is a Server Component (no state); the entrance animations come from <Reveal>.
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 // One entry per card on the hub.
 //  - href: the tool's route. `null` marks a placeholder card that is NOT clickable
-//    (used by "Upcoming Tools", rendered with a dashed border and a "Coming soon" label).
+//    (rendered with a dashed border and a "Coming soon" label).
 //  - accent: one of the hd-accent-* classes from help-desk.css; it tints the icon, top border
 //    and hover glow of that card.
 const tools = [
@@ -32,13 +32,14 @@ const tools = [
   { title: "Social Media", desc: "Follow UU Wiki Club on Instagram, LinkedIn and more.", href: "/help-desk/social", icon: Share2, accent: "hd-accent-green" },
   { title: "Contact / Feedback", desc: "Reach out to us or share your suggestions.", href: "/help-desk/contact", icon: Mail, accent: "hd-accent-teal" },
   { title: "FAQs", desc: "Answers to commonly asked questions.", href: "/help-desk/faqs", icon: MessageCircleQuestion, accent: "hd-accent-green" },
-  { title: "Meta Pages", desc: "A collection of useful links.", href: "/help-desk/meta", icon: Link2, accent: "hd-accent-blue" },
+  // Meta Pages is not finished yet, so it is shown as "Coming soon". Set href to "/help-desk/meta" once its links are added.
+  { title: "Meta Pages", desc: "A collection of useful links.", href: null, icon: Link2, accent: "hd-accent-blue" },
   { title: "Upcoming Tools", desc: "More tools are on the way. Stay tuned!", href: null, icon: Sparkles, accent: "hd-accent-navy" },
 ];
 
 export default function HelpDeskPage() {
   return (
-    <main className="mx-auto max-w-6xl px-5 pb-12">
+    <div className="mx-auto max-w-6xl px-5 pb-12">
       <section className="py-14 text-center sm:py-20">
         <Reveal>
           <span className="hd-eyebrow">
@@ -91,14 +92,6 @@ export default function HelpDeskPage() {
           );
         })}
       </section>
-
-      {/* Chatbot placeholder: reserved spot (id="chatbot") where the help-desk chatbot will be mounted later. */}
-      <Reveal className="mt-6">
-        <section id="chatbot" className="hd-panel hd-muted border-dashed p-6 text-center">
-          <b className="hd-title block text-lg">Chatbot placeholder</b>
-          The help desk chatbot will appear here.
-        </section>
-      </Reveal>
-    </main>
+    </div>
   );
-}
+}

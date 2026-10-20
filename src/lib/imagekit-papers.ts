@@ -18,8 +18,9 @@
 export const AUTH =
   "Basic " + Buffer.from(`${process.env.IMAGEKIT_PRIVATE_KEY}:`).toString("base64");
 
-// Normalised to look like "/PYQs". Case matters!
-const ROOT = "/" + (process.env.IMAGEKIT_PYQ_FOLDER || "/pyqs").replace(/^\/+|\/+$/g, "");
+// Normalised to look like "/PYQs". Case matters! Exported so the file route can make sure
+// it only serves files that live inside this folder.
+export const ROOT = "/" + (process.env.IMAGEKIT_PYQ_FOLDER || "/pyqs").replace(/^\/+|\/+$/g, "");
 
 // ---- EDIT THESE -----------------------------------------------------------
 // Used when no 20xx year can be found in the file name or folder path.
@@ -210,4 +211,4 @@ export async function loadPapers(): Promise<Paper[]> {
       pdf: /\.pdf$/i.test(f.name),
     })),
   }));
-}
+}

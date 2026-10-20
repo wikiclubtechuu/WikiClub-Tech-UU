@@ -26,13 +26,13 @@ export default async function PyqsPage() {
   }
 
   return (
-    <main className="mx-auto max-w-6xl px-5 py-10">
+    <div className="mx-auto max-w-6xl px-5 py-10">
       <Link href="/help-desk" className="hd-back-link inline-block text-sm font-semibold">
         ← Back to Help Desk
       </Link>
       <div className="mt-6">
         <PyqSection papers={papers} />
       </div>
-    </main>
+    </div>
   );
-}
+}

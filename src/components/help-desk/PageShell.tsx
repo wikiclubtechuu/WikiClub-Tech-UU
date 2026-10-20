@@ -21,7 +21,7 @@ export default function PageShell({
   const width = full ? "max-w-[90rem]" : wide ? "max-w-5xl" : "max-w-3xl";
 
   return (
-    <main className={`mx-auto px-5 py-10 ${width}`}>
+    <div className={`mx-auto px-5 py-10 ${width}`}>
       <Link href="/help-desk" className="hd-back-link inline-flex items-center gap-1.5 text-sm font-semibold">
         <ArrowLeft className="h-4 w-4" /> Back to Help Desk
       </Link>
@@ -29,6 +29,6 @@ export default function PageShell({
         <h1 className="hd-display text-4xl sm:text-5xl">{title}</h1>
       </Reveal>
       {children}
-    </main>
+    </div>
   );
-}
+}

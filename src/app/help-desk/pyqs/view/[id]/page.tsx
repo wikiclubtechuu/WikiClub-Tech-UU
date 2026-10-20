@@ -17,8 +17,14 @@ export const metadata: Metadata = {
 export default async function ViewPaperPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
 
-  // Look the paper up in the (cached) ImageKit listing; an unknown id shows the site's 404 page.
-  const papers = await loadPapers();
+  // Look the paper up in the (cached) ImageKit listing. If ImageKit is unreachable or the key is
+  // wrong, log it and fall through to the site's 404 page instead of crashing with a 500.
+  let papers: Awaited<ReturnType<typeof loadPapers>> = [];
+  try {
+    papers = await loadPapers();
+  } catch (e) {
+    console.error("Failed to load papers:", e);
+  }
   const paper = papers.find((p) => p.id === id);
   if (!paper) notFound();
 
@@ -30,7 +36,7 @@ export default async function ViewPaperPage({ params }: { params: Promise<{ id: 
     total === 2 ? (i === 0 ? "Front page" : "Back page") : `Page ${i + 1} of ${total}`;
 
   return (
-    <main className="mx-auto max-w-4xl px-5 py-8">
+    <div className="mx-auto max-w-4xl px-5 py-8">
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
         <BackButton />
         <div className="text-right">
@@ -70,6 +76,6 @@ export default async function ViewPaperPage({ params }: { params: Promise<{ id: 
       <div className="mt-6">
         <BackButton />
       </div>
-    </main>
+    </div>
   );
-}
+}
