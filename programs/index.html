@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fcfa">
+  <meta name="description" content="Explore WikiClub Tech UU programs: Chai with Wiki and Road to Wiki. Learn, contribute, and grow together.">
+  <title>Programs | WikiClub Tech UU</title>
+  <style>
+    :root{color-scheme:light;--ink:#10243a;--navy:#102a43;--blue:#168bc4;--green:#18835f;--muted:#526174;--line:#e2e8f0}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#fff;color:#0f172a;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .site-nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 max(20px,calc((100vw - 1180px)/2));border-bottom:1px solid #e8edf1;background:#fff}
+    .brand{font-weight:800;letter-spacing:-.025em;color:var(--ink);text-decoration:none}
+    .nav-link{font-size:14px;font-weight:650;color:#334155;text-decoration:none}
+    .hero{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid #e2e8f0;background:radial-gradient(circle at 15% 10%,rgba(210,238,250,.75) 0%,rgba(210,238,250,0) 42%),radial-gradient(circle at 85% 10%,rgba(215,250,225,.8) 0%,rgba(215,250,225,0) 45%),radial-gradient(circle at 80% 90%,rgba(255,245,235,.65) 0%,rgba(255,245,235,0) 40%),#f8fcfa}
+    .hero:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(100,116,139,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(100,116,139,.12) 1px,transparent 1px);background-size:52px 52px;background-position:center}
+    .hero-inner,.section{width:min(1180px,100%);margin:0 auto;padding-left:24px;padding-right:24px}
+    .hero-inner{padding-top:82px;padding-bottom:86px}
+    .eyebrow-pill{display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border:1px solid rgba(186,230,253,.95);border-radius:999px;background:rgba(255,255,255,.78);color:#075985;font-size:13px;font-weight:700;box-shadow:0 2px 8px rgba(15,23,42,.035);backdrop-filter:blur(8px)}
+    h1{max-width:850px;margin:25px 0 0;color:var(--ink);font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.08;letter-spacing:-.055em;font-weight:850}
+    .gradient-text{background:linear-gradient(90deg,#168bc4,#168bc4,#209e75);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-copy{max-width:690px;margin:23px 0 0;color:#526174;font-size:clamp(1rem,2vw,1.15rem);line-height:1.8}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 21px;border:1px solid transparent;border-radius:12px;text-decoration:none;font-weight:750;font-size:14px;transition:transform .18s,background .18s,border-color .18s}
+    .button:hover{transform:translateY(-2px)}
+    .button-primary{background:var(--navy);color:#fff;box-shadow:0 8px 18px rgba(15,23,42,.1)}
+    .button-primary:hover{background:#183b5b}
+    .button-secondary{border-color:#cbd5e1;background:rgba(255,255,255,.8);color:var(--navy)}
+    .button-secondary:hover{border-color:#7dd3fc;background:#fff}
+    .section{padding-top:72px;padding-bottom:72px;background:#fff}
+    .section-heading{max-width:690px;margin-bottom:32px}
+    .kicker{margin:0;color:var(--blue);font-size:12px;font-weight:850;letter-spacing:.2em;text-transform:uppercase}
+    h2{margin:12px 0 0;color:var(--ink);font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.17;letter-spacing:-.035em}
+    .section-copy{margin:14px 0 0;color:var(--muted);font-size:16px;line-height:1.8}
+    .program-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+    .program-card{position:relative;isolation:isolate;overflow:hidden;padding:30px;border:1px solid #bae6fd;border-radius:25px;background:#fff;box-shadow:0 4px 15px rgba(15,23,42,.035);transition:transform .22s,box-shadow .22s,border-color .22s}
+    .program-card.green{border-color:#a7f3d0}
+    .program-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(15,23,42,.08);border-color:#7dd3fc}
+    .program-card.green:hover{border-color:#6ee7b7}
+    .program-card:before{content:"";position:absolute;inset:0 0 auto;height:4px;background:#1595d0}
+    .program-card.green:before{background:#209e75}
+    .program-card:after{content:"";position:absolute;z-index:-1;right:-52px;top:-52px;width:145px;height:145px;border:1px solid rgba(125,211,252,.42);border-radius:50%}
+    .program-card.green:after{border-color:rgba(110,231,183,.48)}
+    .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+    .card-icon{display:grid;place-items:center;width:49px;height:49px;flex:0 0 auto;border-radius:15px;background:#e0f2fe;color:var(--blue);font-size:23px}
+    .green .card-icon{background:#d1fae5;color:var(--green)}
+    .tag{display:inline-flex;align-items:center;min-height:27px;padding:5px 10px;border:1px solid #bae6fd;border-radius:999px;background:#f0f9ff;color:#075985;font-size:10px;font-weight:850;letter-spacing:.11em}
+    .green .tag{border-color:#a7f3d0;background:#ecfdf5;color:#065f46}
+    h3{margin:23px 0 0;color:var(--ink);font-size:clamp(1.5rem,3vw,1.9rem);letter-spacing:-.03em}
+    .card-copy{min-height:90px;margin:12px 0 24px;color:var(--muted);font-size:15px;line-height:1.8}
+    .card-footer{padding-top:20px;border-top:1px solid var(--line)}
+    .details-link{display:inline-flex;align-items:center;gap:9px;min-height:43px;padding:10px 14px;border-radius:10px;background:var(--blue);color:#fff;text-decoration:none;font-size:13px;font-weight:800}
+    .details-link:hover{background:#1175a6}
+    .green .details-link{background:var(--green)}
+    .green .details-link:hover{background:#126b4d}
+    .faq-section{width:min(960px,100%);margin:0 auto;padding:8px 24px 76px;background:#fff}
+    .faq-heading{text-align:center}
+    .faq-heading .kicker{color:var(--green)}
+    .faq-list{margin-top:30px;padding:0 24px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 4px 15px rgba(15,23,42,.025)}
+    details{padding:21px 0;border-bottom:1px solid var(--line)}
+    details:last-child{border-bottom:0}
+    summary{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;list-style:none;color:var(--ink);font-weight:750;line-height:1.5}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"+";color:#94a3b8;font-size:24px;font-weight:400}
+    details[open] summary:after{content:"×"}
+    details p{max-width:760px;margin:12px 0 0;color:var(--muted);font-size:14px;line-height:1.8}
+    .cta-wrap{padding:0 24px 76px;background:#fff}
+    .cta{width:min(1180px,100%);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:30px;padding:38px;border:1px solid var(--line);border-radius:25px;background:#fff;box-shadow:0 5px 18px rgba(15,23,42,.04)}
+    .cta-icon{display:grid;place-items:center;width:43px;height:43px;border-radius:12px;background:#e0f2fe;color:var(--blue);font-size:21px}
+    .cta h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+    .cta p{max-width:600px;margin:12px 0 0;color:var(--muted);line-height:1.8}
+    .footer{padding:22px 24px;border-top:1px solid #edf0f3;background:#fff;text-align:center;color:#64748b;font-size:12px}
+    @media(max-width:700px){.site-nav{height:60px;padding:0 20px}.hero-inner{padding-top:58px;padding-bottom:60px}.hero-inner,.section{padding-left:20px;padding-right:20px}.section{padding-top:54px;padding-bottom:54px}.program-grid{grid-template-columns:1fr;gap:17px}.program-card{padding:24px;border-radius:21px}.card-copy{min-height:0}.faq-section{padding:0 20px 56px}.faq-list{padding:0 17px}.cta-wrap{padding:0 20px 56px}.cta{align-items:flex-start;flex-direction:column;padding:25px;border-radius:21px}.actions .button{width:100%}.tag{font-size:9px;letter-spacing:.07em}.footer{padding:20px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="brand" href="../">WikiClub Tech UU</a>
+    <a class="nav-link" href="../">Back to home ↗</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="eyebrow-pill"><span aria-hidden="true">✦</span> WikiClub Tech UU · Programs</span>
+        <h1>Learn. Contribute. <span class="gradient-text">Grow together.</span></h1>
+        <p class="hero-copy">Discover programs that help students explore open knowledge, build practical skills, and take their next step into the Wikimedia and open-source community.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#programs">Explore programs <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="mailto:wikitech@indicwiki.org"><span aria-hidden="true">✉</span> Contact the team</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="section-heading">
+        <p class="kicker">Our programs</p>
+        <h2>Find your way into open source</h2>
+        <p class="section-copy">Start with community-led discovery or follow a more structured path toward contribution.</p>
+      </div>
+      <div class="program-grid">
+        <article class="program-card" id="chai-with-wiki">
+          <div class="card-top">
+            <span class="card-icon" aria-hidden="true">☕</span>
+            <span class="tag">CONNECT &amp; DISCOVER</span>
+          </div>
+          <h3>Chai with Wiki</h3>
+          <p class="card-copy">A relaxed, beginner-friendly space to discover Wikimedia, open knowledge, and open-source collaboration through conversations and community-led learning.</p>
+          <div class="card-footer"><a class="details-link" href="https://meta.wikimedia.org/wiki/Chai_with_Wiki" target="_blank" rel="noopener noreferrer">View program details <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="program-card green" id="road-to-wiki">
+          <div class="card-top">
+            <span class="card-icon" aria-hidden="true">⌘</span>
+            <span class="tag">BUILD &amp; CONTRIBUTE</span>
+          </div>
+          <h3>Road to Wiki</h3>
+          <p class="card-copy">A structured learning and mentorship journey that helps students explore Wikimedia technologies and work toward meaningful open-source contributions.</p>
+          <div class="card-footer"><a class="details-link" href="https://meta.wikimedia.org/wiki/Road_to_wiki_program_UU" target="_blank" rel="noopener noreferrer">View program details <span aria-hidden="true">↗</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="faq-heading">
+        <p class="kicker">FAQ</p>
+        <h2 id="faq-title">Questions, answered</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Do I need prior Wikimedia experience?</summary>
+          <p>No. These programs are designed to make open-source and Wikimedia contribution approachable for students at different experience levels.</p>
+        </details>
+        <details>
+          <summary>What can I learn through these programs?</summary>
+          <p>You can explore Wikimedia technologies, open-source collaboration, contribution workflows, community practices, and practical software-development skills.</p>
+        </details>
+        <details>
+          <summary>How do I learn more or get involved?</summary>
+          <p>Open the details page for the program that interests you, or contact the WikiClub Tech team at <a href="mailto:wikitech@indicwiki.org">wikitech@indicwiki.org</a> for guidance.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cta-wrap">
+      <div class="cta">
+        <div>
+          <span class="cta-icon" aria-hidden="true">▤</span>
+          <h2>Ready to start contributing?</h2>
+          <p>Connect with WikiClub Tech UU and turn your curiosity into practical open-source experience.</p>
+        </div>
+        <a class="button button-primary" href="https://forms.gle/FGoyrEHC1CuP9hPSA" target="_blank" rel="noopener noreferrer">Join the community <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">WikiClub Tech · United University</footer>
+</body>
+</html>
