@@ -566,11 +566,32 @@ const highlightSections: {
   title: "WikiConference India 2026",
   subtitle: "Kochi, Kerala · September 4–6, 2026",
   description:
-    "WikiConference India 2026 was held in Kochi, Kerala — bringing together Wikimedians from across India for three days of sessions, workshops and community collaboration. Explore the official Meta-Wiki page for programme details, reports and community highlights.",
-  image: "/achievements/wikiconference-india-2026.jpg",
+    "WikiConference India 2026 brought together Wikimedians from across India for sessions, workshops and community collaboration. Explore the official Meta-Wiki page for programme details, reports and community highlights.",
+  image: "/achievements/wikiconference.jpg",
   link: "https://meta.wikimedia.org/wiki/WikiConference_India_2026",
   linkText: "View WikiConference India 2026",
 },
+{
+  id: "language-diversity-conference",
+  title: "Language Diversity Conference (LDC)",
+  subtitle: "Language Diversity · Wikimedia Movement",
+  description:
+    "The Language Diversity Conference brings together people working to support linguistic diversity, multilingual knowledge and underrepresented languages across Wikimedia projects. Explore the conference resource to learn more about language communities and their initiatives.",
+  image: "/achievements/LDC 3.jpg",
+  link: "https://share.google/Ia1pvT1gVZwbgfrF8",
+  linkText: "Explore Language Diversity Conference",
+},
+{
+  id: "train-a-wikipedian",
+  title: "Train a Wikipedian (TaW)",
+  subtitle: "Deoband Community Wikimedia",
+  description:
+    "Train a Wikipedian is an initiative by Deoband Community Wikimedia that empowers volunteers and emerging community leaders with Wikimedia knowledge, leadership skills and opportunities to contribute to open knowledge ecosystems.",
+  image: "/achievements/taw26.jpg",
+  link: "https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia/Train_a_Wikipedian",
+  linkText: "Explore Train a Wikipedian",
+},
+
 {
   id: "shadab-global-achievement",
   title: "Shadab's Global Achievement",
@@ -607,7 +628,7 @@ const highlightSections: {
         description:
           "A team achievement highlighting innovation, collaboration and problem-solving during a GenAI hackathon.",
         image:
-          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=85",
+          "/achievements/gen ai hackathon.jpg",
         link: "https://in.linkedin.com/in/kavaljeet-singh-dev",
         linkText: "View Contributor Profile",
       },
@@ -835,7 +856,7 @@ function HighlightSlideshow({
                 <div className="ml-2 flex items-center gap-2">
                   {section.slides.map((slide, slideIndex) => (
                     <button
-                      key={slide.id}
+                      key={`${section.id}-${slide.id}-${slideIndex}`}
                       type="button"
                       onClick={() => setIndex(slideIndex)}
                       aria-label={`Go to slide ${slideIndex + 1} in ${section.heading}`}
