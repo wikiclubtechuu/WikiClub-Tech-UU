@@ -60,7 +60,7 @@ export default function ProgramsPage() {
             backgroundImage:
               "radial-gradient(circle at 15% 10%, rgba(210, 238, 250, 0.75) 0%, rgba(210, 238, 250, 0) 42%), radial-gradient(circle at 85% 10%, rgba(215, 250, 225, 0.8) 0%, rgba(215, 250, 225, 0) 45%), radial-gradient(circle at 80% 90%, rgba(255, 245, 235, 0.65) 0%, rgba(255, 245, 235, 0) 40%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 0%, black 45%, transparent 100%)",
+              "linear-gradient(to bottom, black 0%, black 12%, rgba(0, 0, 0, 0.92) 28%, rgba(0, 0, 0, 0.72) 48%, rgba(0, 0, 0, 0.42) 68%, rgba(0, 0, 0, 0.16) 86%, transparent 100%)",
             maskImage:
               "linear-gradient(to bottom, black 0%, black 45%, transparent 100%)",
           }}
@@ -75,7 +75,7 @@ export default function ProgramsPage() {
             backgroundSize: "52px 52px",
             backgroundPosition: "center center",
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
+              "linear-gradient(to bottom, black 0%, black 12%, rgba(0, 0, 0, 0.9) 28%, rgba(0, 0, 0, 0.68) 48%, rgba(0, 0, 0, 0.4) 68%, rgba(0, 0, 0, 0.14) 86%, transparent 100%)",
             maskImage:
               "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
           }}
