@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FadeIn from "@/components/program/FadeIn";
 import {
   ArrowUpRight,
   BookOpen,
@@ -120,6 +121,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* All sections below the hero use a plain background with no grid or gradient. */}
+      <FadeIn>
       <section
         id="programs"
         className="mx-auto max-w-7xl scroll-mt-24 bg-white px-5 py-14 sm:px-6 sm:py-20 lg:px-8"
@@ -193,7 +195,9 @@ export default function ProgramsPage() {
           })}
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="mx-auto max-w-5xl bg-white px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#18835F] sm:text-sm">
@@ -223,7 +227,9 @@ export default function ProgramsPage() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section className="bg-white px-5 pb-14 sm:px-6 sm:pb-20 lg:px-8">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 shadow-md shadow-slate-900/[0.04] sm:p-10 lg:p-12">
           <div className="flex flex-col gap-7 md:flex-row md:items-center md:justify-between">
@@ -250,6 +256,7 @@ export default function ProgramsPage() {
           </div>
         </div>
       </section>
+      </FadeIn>
     </main>
   );
 }
