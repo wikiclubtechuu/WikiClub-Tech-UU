@@ -50,11 +50,22 @@ export default function ProgramsPage() {
       {/* The grid and gradient are intentionally limited to this hero section. */}
       <section
         className="relative isolate overflow-hidden border-b border-slate-200/70"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 15% 10%, rgba(210, 238, 250, 0.75) 0%, rgba(210, 238, 250, 0) 42%), radial-gradient(circle at 85% 10%, rgba(215, 250, 225, 0.8) 0%, rgba(215, 250, 225, 0) 45%), radial-gradient(circle at 80% 90%, rgba(255, 245, 235, 0.65) 0%, rgba(255, 245, 235, 0) 40%), #f8fcfa",
-        }}
+        style={{ backgroundColor: "#f8fcfa" }}
       >
+        {/* Pastel hero colors fade gradually into the plain page background. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 15% 10%, rgba(210, 238, 250, 0.75) 0%, rgba(210, 238, 250, 0) 42%), radial-gradient(circle at 85% 10%, rgba(215, 250, 225, 0.8) 0%, rgba(215, 250, 225, 0) 45%), radial-gradient(circle at 80% 90%, rgba(255, 245, 235, 0.65) 0%, rgba(255, 245, 235, 0) 40%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black 0%, black 45%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to bottom, black 0%, black 45%, transparent 100%)",
+          }}
+        />
+        {/* The grid fades out smoothly toward the bottom of the hero. */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0"
@@ -63,8 +74,10 @@ export default function ProgramsPage() {
               "linear-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 116, 139, 0.12) 1px, transparent 1px)",
             backgroundSize: "52px 52px",
             backgroundPosition: "center center",
-            WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent)",
-            maskImage: "linear-gradient(to bottom, black 75%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to bottom, black 0%, black 55%, transparent 100%)",
           }}
         />
         <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
