@@ -4,7 +4,6 @@ import {
   BookOpen,
   Code2,
   Mail,
-  MessageCircle,
   Sparkles,
 } from "lucide-react";
 
@@ -15,7 +14,6 @@ const programs = [
     eyebrow: "CONNECT & DISCOVER",
     description:
       "A relaxed, beginner-friendly space to discover Wikimedia, open knowledge, and open-source collaboration through conversations and community-led learning.",
-    icon: MessageCircle,
     href: "https://meta.wikimedia.org/wiki/Chai_with_Wiki",
     accent: "blue",
   },
@@ -144,11 +142,11 @@ export default function ProgramsPage() {
                 />
 
                 <div className="relative flex items-start justify-between gap-4">
-                  <div
-                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${isBlue ? "bg-sky-100 text-[#168BC4]" : "bg-emerald-100 text-[#18835F]"}`}
-                  >
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </div>
+{!isBlue && (
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-[#18835F]">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </div>
+                  )}
                   <span
                     className={`rounded-full border px-3 py-1.5 text-[10px] font-bold tracking-[0.12em] sm:text-xs ${isBlue ? "border-sky-200 bg-sky-50 text-sky-800" : "border-emerald-200 bg-emerald-50 text-emerald-800"}`}
                   >
