@@ -63,6 +63,8 @@ export default function ProgramsPage() {
               "linear-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 116, 139, 0.12) 1px, transparent 1px)",
             backgroundSize: "52px 52px",
             backgroundPosition: "center center",
+            WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent)",
+            maskImage: "linear-gradient(to bottom, black 75%, transparent)",
           }}
         />
         <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
