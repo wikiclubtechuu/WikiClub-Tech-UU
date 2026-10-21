@@ -15,6 +15,7 @@ const programs = [
     description:
       "A relaxed, beginner-friendly space to discover Wikimedia, open knowledge, and open-source collaboration through conversations and community-led learning.",
     href: "https://meta.wikimedia.org/wiki/Chai_with_Wiki",
+    icon: null,
     accent: "blue",
   },
   {
@@ -157,7 +158,7 @@ export default function ProgramsPage() {
                 />
 
                 <div className="relative flex items-start justify-between gap-4">
-{!isBlue && (
+{!isBlue && Icon && (
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-[#18835F]">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
