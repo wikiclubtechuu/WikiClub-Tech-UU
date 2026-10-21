@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -22,7 +22,7 @@ const navItems = [
   },
   {
     label: "Achievements",
-    href: "/contributors",
+    href: "/achievements",
   },
   {
     label: "Certify",
@@ -344,3 +344,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
