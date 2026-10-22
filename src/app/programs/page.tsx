@@ -89,13 +89,13 @@ export default function ProgramsPage() {
               WikiClub Tech UU · Programs
             </span>
 
-            <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-[#0b2540] sm:text-5xl sm:leading-[1.1] lg:text-6xl">
+            <h1 className="mt-6 max-w-4xl text-[48px] font-extrabold leading-[72px] tracking-tight text-[#0b2540]">
               Learn. Contribute.{" "}
               <span className="text-[#1689d8]">Grow </span>
               <span className="text-[#19b99a]">together.</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            <p className="mt-6 max-w-2xl text-[20px] leading-[24px] text-slate-600">
               Discover programs that help students explore open knowledge, build
               practical skills, and take their next step into the Wikimedia and
               open-source community.
