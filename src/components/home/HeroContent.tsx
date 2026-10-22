@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -22,6 +23,7 @@ const HeroContent = () => {
             lg:py-24
           "
         >
+          {/* WikiClub Tech Logo */}
           <motion.div
             initial={{
               opacity: 0,
@@ -54,6 +56,7 @@ const HeroContent = () => {
             />
           </motion.div>
 
+          {/* Main Heading */}
           <motion.h1
             initial={{
               opacity: 0,
@@ -86,6 +89,7 @@ const HeroContent = () => {
             <span className="text-[#19a36f]"> Contribute</span>
           </motion.h1>
 
+          {/* Welcome Description */}
           <motion.p
             initial={{
               opacity: 0,
@@ -114,6 +118,7 @@ const HeroContent = () => {
             A student-driven tech community at United University, where we learn, build, and contribute together.
           </motion.p>
 
+          {/* Call-to-Action Buttons */}
           <motion.div
             initial={{
               opacity: 0,
@@ -138,6 +143,7 @@ const HeroContent = () => {
               gap-4
             "
           >
+            {/* Join Community Button */}
             <motion.a
               href="https://forms.gle/FGoyrEHC1CuP9hPSA"
               target="_blank"
@@ -181,6 +187,7 @@ const HeroContent = () => {
               />
             </motion.a>
 
+            {/* Explore What We Do Button */}
             <motion.a
               href="#what-we-do"
               whileHover={{

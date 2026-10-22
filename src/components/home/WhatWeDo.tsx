@@ -1,118 +1,151 @@
+
 "use client";
 
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import {
+  Code2,
+  BookOpen,
+  CalendarDays,
+  Lightbulb,
+  GitBranch,
+} from "lucide-react";
+
+const activities = [
+  {
+    icon: Code2,
+    title: "Open Source",
+    description:
+      "Explore real open-source projects, make contributions and learn collaborative development.",
+    iconColor: "text-sky-500",
+    iconBg: "bg-sky-50",
+  },
+  {
+    icon: BookOpen,
+    title: "Workshops & Sessions",
+    description:
+      "Take part in practical workshops, technical sessions and hands-on learning activities.",
+    iconColor: "text-emerald-500",
+    iconBg: "bg-emerald-50",
+  },
+  {
+    icon: CalendarDays,
+    title: "Technical Events",
+    description:
+      "Participate in hackathons, coding activities, community events and technology-focused programs.",
+    iconColor: "text-violet-600",
+    iconBg: "bg-violet-50",
+  },
+  {
+    icon: Lightbulb,
+    title: "Projects",
+    description:
+      "Turn ideas into practical projects and experiment with technologies that solve real problems.",
+    iconColor: "text-amber-500",
+    iconBg: "bg-amber-50",
+  },
+  {
+    icon: GitBranch,
+    title: "Community Programs",
+    description:
+      "Join initiatives that encourage knowledge sharing, participation and contribution within the community.",
+    iconColor: "text-cyan-600",
+    iconBg: "bg-cyan-50",
+  },
+];
 
 const WhatWeDo = () => {
-  const activities = [
-    {
-      title: 'Open Source Contribution',
-      description:
-        'We actively contribute to open-source projects, believing in the power of community-driven development.',
-      image:
-        'https://i.ibb.co/hxDmnkqy/1758819902792.jpg',
-    },
-    {
-      title: 'Community Events',
-      description:
-        'We organize workshops, hackathons, and meetups to foster a vibrant and collaborative learning environment.',
-      image: 'https://i.ibb.co/Z1JwmMXq/g14.jpg',
-    },
-    {
-      title: 'Tech Workshops',
-      description:
-        'We host workshops on various technologies, from web development to machine learning, to help members learn new skills.',
-      image: 'https://i.ibb.co/TzZHrtn/g1.jpg',
-    },
-    {
-      title: 'Industry Collaboration & Mentorship',
-      description:
-        'We are proudly affiliated with GDG Prayagraj and receive mentorship from experts at IIIT Hyderabad, connecting our members with the broader tech community.',
-      image: 'https://i.ibb.co/LzhtDZYX/g12.jpg',
-    }
-  ];
-
   return (
-    <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="what-we-do"
+      className="bg-[#f0f8ff] py-16 sm:py-20 lg:py-24"
+    >
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        {/* Section Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
+          className="mb-10 text-center sm:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
+          <div className="mb-3 flex items-center justify-center gap-3">
+            <span className="h-[2px] w-8 bg-[#1689d8]" />
+            <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
+              What We Do
+            </span>
+            <span className="h-[2px] w-8 bg-[#19b99a]" />
+          </div>
+
+          <h2 className="text-3xl font-extrabold tracking-tight text-[#0b2540] sm:text-4xl">
             What We Do
           </h2>
-          {/* Desktop Timeline */}
-          <div className="hidden md:block relative">
-            <div className="border-l-2 border-blue-600 absolute h-full left-1/2 transform -translate-x-1/2"></div>
-            {activities.map((activity, index) => (
-              <motion.div
-                key={index}
-                className={`mb-8 flex justify-between items-center w-full ${
-                  index % 2 === 0 ? 'flex-row-reverse' : ''
-                }`}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="w-5/12">
-                  <div className="bg-gray-50 rounded-lg shadow-md overflow-hidden">
-                    <div className="md:flex items-stretch">
-                      <div className="md:w-1/3">
-                        <Image
-                          className="h-full w-full object-cover"
-                          src={activity.image}
-                          alt={activity.title}
-                          width={400}
-                          height={400}
-                        />
-                      </div>
-                      <div className="md:w-2/3 p-8">
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{activity.title}</h3>
-                        <p className="text-gray-600">{activity.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="z-10 flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full">
-                  <span className="text-white font-bold">{index + 1}</span>
-                </div>
-                <div className="w-5/12"></div>
-              </motion.div>
-            ))}
-          </div>
-          {/* Mobile Layout */}
-          <div className="md:hidden">
-            {activities.map((activity, index) => (
-              <motion.div
-                key={index}
-                className="mb-8"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="bg-gray-50 rounded-lg shadow-md overflow-hidden">
-                  <Image
-                    className="h-48 w-full object-cover"
-                    src={activity.image}
-                    alt={activity.title}
-                    width={400}
-                    height={300}
-                  />
-                  <div className="p-8">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{activity.title}</h3>
-                    <p className="text-gray-600">{activity.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+            Discover the activities, opportunities and initiatives that help
+            our community learn, build and contribute together.
+          </p>
         </motion.div>
+
+        {/* Activity Cards */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {activities.map((activity, index) => {
+            const Icon = activity.icon;
+
+            return (
+              <motion.div
+                key={activity.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.5,
+                  delay: (index % 3) * 0.08,
+                }}
+                whileHover={{ y: -4 }}
+                className="
+                  min-h-[220px]
+                  rounded-2xl
+                  border border-slate-100
+                  bg-white
+                  p-6
+                  shadow-sm
+                  transition-shadow duration-300
+                  hover:shadow-md
+                  sm:p-7
+                "
+              >
+                <div
+                  className={`
+                    flex h-12 w-12 items-center justify-center
+                    rounded-xl ${activity.iconBg} ${activity.iconColor}
+                  `}
+                >
+                  <Icon size={23} strokeWidth={1.9} />
+                </div>
+
+                <h3 className="mt-5 text-lg font-bold text-[#0b2540]">
+                  {activity.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-slate-500">
+                  {activity.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Bottom Text */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-10 text-center text-sm text-slate-500 sm:mt-12 sm:text-base"
+        >
+          Explore technology. Build projects. Contribute to the community.
+        </motion.p>
       </div>
     </section>
   );
