@@ -15,6 +15,10 @@ const navItems = [
     label: "Events",
     href: "/events",
   },
+  {
+  label: "Gallery",
+  href: "/gallery",
+},
   { label: "Achievements", href: "/achievements" },
   { label: "Certify", href: "/validator" },
   { label: "Help Desk", href: "/pyq" },
