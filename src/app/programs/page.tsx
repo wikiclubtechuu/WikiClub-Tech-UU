@@ -104,13 +104,13 @@ export default function ProgramsPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="#programs"
-                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#0b2540] px-6 py-3 font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#163a5c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#0b2540] px-6 py-3 font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#0b2540]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1689d8] focus-visible:ring-offset-2"
               >
                 Explore programs <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
               </a>
               <a
                 href="mailto:wikitech@indicwiki.org"
-                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300/80 bg-white/75 px-6 py-3 font-semibold text-[#0b2540] transition hover:border-sky-300 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300/80 bg-white/75 px-6 py-3 font-semibold text-[#0b2540] transition hover:border-[#1689d8] hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1689d8] focus-visible:ring-offset-2"
               >
                 <Mail className="h-4 w-4" /> Contact the team
               </a>
@@ -249,7 +249,7 @@ export default function ProgramsPage() {
               href="https://forms.gle/FGoyrEHC1CuP9hPSA"
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#1689d8] px-6 py-3 font-bold text-white shadow-md shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#1689d8]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+              className="group inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#1689d8] px-6 py-3 font-bold text-white shadow-md shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#1689d8]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1689d8] focus-visible:ring-offset-2"
             >
               Join the community <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
             </Link>
