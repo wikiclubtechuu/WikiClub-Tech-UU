@@ -4,24 +4,18 @@ import Image from "next/image";
 const ValidatorPage = () => {
   return (
     <div className="validator-page-background min-h-screen relative overflow-hidden">
-      {/* Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Top-left corner decoration */}
         <div className="absolute -top-20 -left-20 w-64 h-64 bg-[#005B8E]/10 rounded-full blur-3xl" />
         <div className="absolute top-0 left-0 w-40 h-40 bg-[#8B0000]/10 rounded-full blur-2xl" />
 
-        {/* Top-right corner decoration */}
         <div className="absolute -top-10 -right-10 w-48 h-48 bg-[#2E8B57]/10 rounded-full blur-2xl" />
 
-        {/* Bottom decoration */}
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent opacity-50" />
       </div>
 
-      {/* Main Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="space-y-12">
 
-          {/* Header with WikiClub Logo */}
           <div className="text-center max-w-3xl mx-auto">
             <div className="flex justify-center mb-8">
               <Image
@@ -44,7 +38,6 @@ const ValidatorPage = () => {
             </div>
           </div>
 
-          {/* Validator Form */}
           <ValidatorForm />
 
         </div>

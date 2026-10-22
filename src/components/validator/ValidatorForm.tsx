@@ -39,10 +39,6 @@ const ValidatorForm: React.FC = () => {
 
   const [validationResult, setValidationResult] =
     useState<ValidationResult | null>(null);
-
-  /*
-   * Handle input changes
-   */
   const handleInputChange = (
     field: keyof ValidationFormData,
     value: string
@@ -56,10 +52,6 @@ const ValidatorForm: React.FC = () => {
       setValidationResult(null);
     }
   };
-
-  /*
-   * Manual certificate verification
-   */
   const handleSubmit = async (
     e: React.FormEvent
   ) => {
@@ -101,10 +93,6 @@ const ValidatorForm: React.FC = () => {
       setIsLoading(false);
     }
   };
-
-  /*
-   * Reset validator
-   */
   const handleGoBack = () => {
     setValidationResult(null);
 
@@ -113,10 +101,6 @@ const ValidatorForm: React.FC = () => {
       emailOrName: '',
     });
   };
-
-  /*
-   * Successful verification result
-   */
   if (validationResult?.success) {
     return (
       <VerificationResult
@@ -128,19 +112,11 @@ const ValidatorForm: React.FC = () => {
 
   return (
     <div className="validator-page-background mx-auto w-full max-w-2xl">
-
-      {/* Main validator card */}
       <Card className="relative m-0 overflow-hidden rounded-2xl border-0 bg-white p-0 shadow-xl">
-
-        {/* Blue gradient header */}
         <div className="relative isolate overflow-hidden bg-gradient-to-br from-[#005B8E] via-[#0077A8] to-[#008DA8] px-6 py-8 text-center text-white sm:px-10">
-
-          {/* Decorative circles */}
           <div className="pointer-events-none absolute -right-8 -top-12 -z-10 h-40 w-40 rounded-full bg-white/10" />
 
           <div className="pointer-events-none absolute -bottom-16 -left-8 -z-10 h-36 w-36 rounded-full bg-cyan-300/10" />
-
-          {/* Shield icon */}
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-white/15 shadow-lg backdrop-blur-sm">
             <Shield className="h-8 w-8 text-white" />
           </div>
@@ -154,16 +130,12 @@ const ValidatorForm: React.FC = () => {
             its authenticity against WikiClub Tech UU records.
           </p>
         </div>
-
-        {/* Form body */}
         <CardContent className="px-5 pb-6 pt-7 sm:px-8 sm:pb-7">
 
           <form
             onSubmit={handleSubmit}
             className="space-y-6"
           >
-
-            {/* Certificate ID */}
             <div className="space-y-2">
 
               <Label
@@ -198,8 +170,6 @@ const ValidatorForm: React.FC = () => {
                 Enter the Certificate ID exactly as shown on your certificate.
               </p>
             </div>
-
-            {/* Section divider */}
             <div className="flex items-center gap-3">
 
               <div className="h-px flex-1 bg-slate-200" />
@@ -211,8 +181,6 @@ const ValidatorForm: React.FC = () => {
               <div className="h-px flex-1 bg-slate-200" />
 
             </div>
-
-            {/* Email / Full Name */}
             <div className="space-y-2">
 
               <Label
@@ -254,8 +222,6 @@ const ValidatorForm: React.FC = () => {
               </p>
 
             </div>
-
-            {/* Verify button */}
             <Button
               type="submit"
               disabled={isLoading}
@@ -279,8 +245,6 @@ const ValidatorForm: React.FC = () => {
             </Button>
 
           </form>
-
-          {/* Security information */}
           <div className="mt-6 flex items-center justify-center gap-2 border-t border-slate-100 pt-5 text-center">
 
             <LockKeyhole className="h-4 w-4 shrink-0 text-[#2E8B57]" />
@@ -294,8 +258,6 @@ const ValidatorForm: React.FC = () => {
         </CardContent>
 
       </Card>
-
-      {/* Failed verification */}
       {validationResult &&
         !validationResult.success && (
           <VerificationResult
@@ -303,8 +265,6 @@ const ValidatorForm: React.FC = () => {
             onGoBack={handleGoBack}
           />
         )}
-
-      {/* Help section */}
       <Card className="mt-6 rounded-xl border border-slate-200 bg-slate-50 shadow-sm">
 
         <CardContent className="px-5 py-6">
