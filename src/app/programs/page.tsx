@@ -84,8 +84,8 @@ export default function ProgramsPage() {
         />
         <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="max-w-4xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-sky-200/90 bg-white/75 px-4 py-2 text-sm font-semibold text-sky-800 shadow-sm shadow-sky-900/[0.04] backdrop-blur-sm">
-              <Sparkles className="h-4 w-4 text-sky-600 transition-transform duration-300 hover:rotate-12 hover:scale-110 motion-reduce:transform-none" aria-hidden="true" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#1689d8]/30 bg-white/75 px-4 py-2 text-sm font-semibold text-[#1689d8] shadow-sm shadow-sky-900/[0.04] backdrop-blur-sm">
+              <Sparkles className="h-4 w-4 text-[#1689d8] transition-transform duration-300 hover:rotate-12 hover:scale-110 motion-reduce:transform-none" aria-hidden="true" />
               WikiClub Tech UU · Programs
             </span>
 
@@ -126,7 +126,7 @@ export default function ProgramsPage() {
         className="mx-auto max-w-7xl scroll-mt-24 bg-white px-5 py-14 sm:px-6 sm:py-20 lg:px-8"
       >
         <div className="mb-8 max-w-2xl sm:mb-10">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#168BC4] sm:text-sm">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#1689d8] sm:text-sm">
             Our programs
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#10243A] sm:text-4xl">
@@ -147,7 +147,7 @@ export default function ProgramsPage() {
               <FadeIn key={program.id} delayMs={index * 180}>
               <article
                 id={program.id}
-                className={`group relative isolate overflow-hidden rounded-2xl border bg-white p-6 shadow-sm shadow-slate-900/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/[0.08] sm:p-8 ${isBlue ? "border-sky-200/90 hover:border-sky-300" : "border-emerald-200/90 hover:border-emerald-300"}`}
+                className={`group relative isolate overflow-hidden rounded-2xl border bg-white p-6 shadow-sm shadow-slate-900/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/[0.08] sm:p-8 ${isBlue ? "border-[#1689d8]/30 hover:border-[#1689d8]" : "border-[#19b99a]/35 hover:border-[#19b99a]"}`}
               >
                 <div
                   aria-hidden="true"
@@ -155,17 +155,17 @@ export default function ProgramsPage() {
                 />
                 <div
                   aria-hidden="true"
-                  className={`absolute -right-12 -top-12 h-36 w-36 rounded-full border ${isBlue ? "border-sky-200/50" : "border-emerald-200/60"}`}
+                  className={`absolute -right-12 -top-12 h-36 w-36 rounded-full border ${isBlue ? "border-[#1689d8]/20" : "border-[#19b99a]/25"}`}
                 />
 
                 <div className="relative flex items-start justify-between gap-4">
 {!isBlue && Icon && (
-                    <div className="group flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-[#12856f] transition-colors duration-300 hover:bg-emerald-200">
+                    <div className="group flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#19b99a]/15 text-[#19b99a] transition-colors duration-300 hover:bg-[#19b99a]/25">
                       <Icon className="h-5 w-5 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110 motion-reduce:transform-none" aria-hidden="true" />
                     </div>
                   )}
                   <span
-                    className={`rounded-full border px-3 py-1.5 text-[10px] font-bold tracking-[0.12em] sm:text-xs ${isBlue ? "border-sky-200 bg-sky-50 text-sky-800" : "border-emerald-200 bg-emerald-50 text-emerald-800"}`}
+                    className={`rounded-full border px-3 py-1.5 text-[10px] font-bold tracking-[0.12em] sm:text-xs ${isBlue ? "border-[#1689d8]/30 bg-[#1689d8]/10 text-[#1689d8]" : "border-[#19b99a]/35 bg-[#19b99a]/10 text-[#19b99a]"}`}
                   >
                     {program.eyebrow}
                   </span>
@@ -184,7 +184,7 @@ export default function ProgramsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={"View more details about " + program.title}
-                    className={`group inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isBlue ? "bg-[#168BC4] hover:bg-[#0f78c0] focus-visible:ring-sky-500" : "bg-[#18835F] hover:bg-[#0f6f5d] focus-visible:ring-emerald-500"}`}
+                    className={`group inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isBlue ? "bg-[#1689d8] hover:bg-[#1689d8]/90 focus-visible:ring-[#1689d8]" : "bg-[#19b99a] text-[#0b2540] hover:bg-[#19b99a]/90 focus-visible:ring-[#19b99a]"}`}
                   >
                     View program details <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
                   </a>
@@ -200,7 +200,7 @@ export default function ProgramsPage() {
       <FadeIn>
       <section className="mx-auto max-w-5xl bg-white px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#18835F] sm:text-sm">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#19b99a] sm:text-sm">
             FAQ
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#10243A] sm:text-4xl">
@@ -211,7 +211,7 @@ export default function ProgramsPage() {
         <div className="mt-8 divide-y divide-slate-200/80 overflow-hidden rounded-2xl border border-slate-200/80 bg-white px-5 shadow-sm shadow-slate-900/[0.03] sm:mt-10 sm:px-7">
           {faqs.map((faq) => (
             <details key={faq.q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10243A] transition hover:text-[#168BC4] [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10243A] transition hover:text-[#1689d8] [&::-webkit-details-marker]:hidden">
                 <span>{faq.q}</span>
                 <span
                   aria-hidden="true"
@@ -234,7 +234,7 @@ export default function ProgramsPage() {
         <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 shadow-md shadow-slate-900/[0.04] sm:p-10 lg:p-12">
           <div className="flex flex-col gap-7 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
-              <div className="group flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-[#168BC4] transition-colors duration-300 hover:bg-sky-200">
+              <div className="group flex h-11 w-11 items-center justify-center rounded-xl bg-[#1689d8]/10 text-[#1689d8] transition-colors duration-300 hover:bg-[#1689d8]/20">
                 <BookOpen className="h-5 w-5 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 motion-reduce:transform-none" aria-hidden="true" />
               </div>
               <h2 className="mt-4 text-2xl font-bold tracking-tight text-[#10243A] sm:text-3xl lg:text-4xl">
@@ -249,7 +249,7 @@ export default function ProgramsPage() {
               href="https://forms.gle/FGoyrEHC1CuP9hPSA"
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#102A43] px-6 py-3 font-bold text-white shadow-md shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#183B5B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+              className="group inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#1689d8] px-6 py-3 font-bold text-white shadow-md shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#1689d8]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
             >
               Join the community <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
             </Link>
