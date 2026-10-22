@@ -91,9 +91,8 @@ export default function ProgramsPage() {
 
             <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-[#0b2540] sm:text-5xl sm:leading-[1.1] lg:text-6xl">
               Learn. Contribute.{" "}
-              <span className="text-[#19b99a]">
-                Grow together.
-              </span>
+              <span className="text-[#1689d8]">Grow </span>
+              <span className="text-[#19b99a]">together.</span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
