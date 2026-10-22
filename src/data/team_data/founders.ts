@@ -4,6 +4,7 @@ type Founder = {
   role: string;
   roleType: 'founder';
   image: string;
+  imagePosition?: string;
   email?: string;
   linkedin?: string;
   github?: string;
@@ -11,7 +12,7 @@ type Founder = {
   bio?: string;
 };
 
-const image = (file: string) => `https://raw.githubusercontent.com/mishraji0519/wikiclubtech-nitin/main/WikiClub-Tech-UU-main/WikiClub-Tech-UU-main/public/team/${encodeURIComponent(file)}`;
+const image = (file: string) => `/team/team/${file}`;
 
 export const founders: Founder[] = [
   {
@@ -19,10 +20,10 @@ export const founders: Founder[] = [
     name: 'Anshuman Rai',
     role: 'Founder',
     roleType: 'founder',
-    image: image('Anshuman Rai Founder.jpg'),
+    image: image('Anshuman Rai Founder.jpeg'),
     email: 'anshuman.wikiclubtech@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/anshuman-rai-0433032b9',
-    github: 'https://github.com/Anshuman-Rai-1004',
+    linkedin: 'https://www.linkedin.com/in/hey-anshuman',
+    github: 'https://github.com/hey-anshuman',
     metaWiki: 'https://meta.wikimedia.org/wiki/User:Anshuman.rai.1004',
     bio: 'Anshuman Rai is the Founder of WikiClub Tech UU, driven by a vision to build a collaborative technology community around open knowledge, open-source, and innovation. He has been actively involved in organizing technical events, hackathons, workshops, and community initiatives that help students learn, build, and contribute beyond the classroom.\n\nThrough WikiClub Tech-UU, he focuses on creating opportunities for students to explore technology, collaborate on real-world projects, and contribute to the wider open-knowledge ecosystem.',
   },
@@ -32,6 +33,7 @@ export const founders: Founder[] = [
     role: 'Founder',
     roleType: 'founder',
     image: image('SHADAB-FOUNDER.jpeg'),
+    imagePosition: '30% center',
     email: 'shadab.wikiclubtech@gmail.com',
     linkedin: 'https://www.linkedin.com/in/mohdshadabdev',
     github: 'https://github.com/mohdshadabdev',

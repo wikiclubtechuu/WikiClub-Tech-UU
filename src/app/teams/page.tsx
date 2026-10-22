@@ -68,8 +68,14 @@ const FacultyCoordinatorSection = () => <section aria-labelledby='faculty-coordi
 
 const Index = () => {
   const [showPreviousTeam, setShowPreviousTeam] = useState(false);
-  const displayedCurrentMembers = [...currentRoster, ...currentVolunteerDemoMembers];
-  const displayedPreviousMembers = previousTeamMembers.filter((member) => member.roleType !== 'coordinator').map((member) => member.name === 'Anshuman Rai' && member.role === 'Co-Envoy' ? { ...member, github: 'https://github.com/Anshuman-Rai-1004' } : member) as CurrentTeamMember[];
+  const byName = (a: CurrentTeamMember, b: CurrentTeamMember) => a.name.trim().localeCompare(b.name.trim(), 'en', { sensitivity: 'base' });
+  const allCurrentMembers: CurrentTeamMember[] = [...currentRoster, ...currentVolunteerDemoMembers];
+  const displayedCurrentMembers: CurrentTeamMember[] = [
+    ...allCurrentMembers.filter((member) => member.roleType !== 'lead' && member.roleType !== 'volunteer'),
+    ...allCurrentMembers.filter((member) => member.roleType === 'lead').sort(byName),
+    ...allCurrentMembers.filter((member) => member.roleType === 'volunteer').sort(byName),
+  ];
+  const displayedPreviousMembers = previousTeamMembers.filter((member) => member.roleType !== 'coordinator').map((member) => member.name === 'Anshuman Rai' && member.role === 'Co-Envoy' ? { ...member, github: 'https://github.com/hey-anshuman' } : member) as CurrentTeamMember[];
   const manviIndex = displayedPreviousMembers.findIndex((member) => member.name === 'Manvi Keshari');
   const khushiIndex = displayedPreviousMembers.findIndex((member) => member.name === 'Khushi Verma');
   const rishangIndex = displayedPreviousMembers.findIndex((member) => member.name === 'Rishang mishra');
@@ -82,7 +88,7 @@ const Index = () => {
   const handlePreviousTeamToggle = () => { const next = !showPreviousTeam; setShowPreviousTeam(next); if (next) window.setTimeout(() => document.getElementById('previous-team')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80); };
   return <div className='min-h-screen bg-background'>
     <CursorGlow />
-    <header className='relative overflow-hidden bg-[#fbfdfc] px-6 py-24 [mask-image:linear-gradient(to_bottom,black_75%,transparent)]'><WikimediaBackground /><div aria-hidden='true' className='pointer-events-none absolute inset-0 z-[1] opacity-90' style={{ backgroundImage: 'linear-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 116, 139, 0.12) 1px, transparent 1px)', backgroundSize: '52px 52px', backgroundPosition: 'center center' }} /><div className='container relative z-10 mx-auto max-w-6xl'><motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className='text-center'><div className='mb-8 flex justify-center'><Image src={assetPath('/wikiclubtechuu.png')} width={1058} height={262} alt='WikiClub Tech-UU' className='h-auto w-[min(34rem,92vw)] object-contain' priority /></div><p className='mb-4 text-sm font-bold uppercase tracking-[0.28em] text-black/70'>Wikiclub Tech-UU • 2026–27</p><h1 className='mb-6 text-5xl font-black tracking-tight text-black drop-shadow-lg md:text-7xl'>Our Mission, Our People</h1><p className='mx-auto max-w-3xl text-xl font-medium text-black/95 drop-shadow md:text-2xl'>More than a team page — discover the people, story, and community behind Wikiclub Tech-UU.</p></motion.div></div></header>
+    <header className='relative overflow-hidden bg-[#fbfdfc] px-6 py-24 [mask-image:linear-gradient(to_bottom,black_75%,transparent)]'><WikimediaBackground /><div aria-hidden='true' className='pointer-events-none absolute inset-0 z-[1] opacity-90' style={{ backgroundImage: 'linear-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 116, 139, 0.12) 1px, transparent 1px)', backgroundSize: '52px 52px', backgroundPosition: 'center center' }} /><div className='container relative z-10 mx-auto max-w-6xl'><motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className='text-center'><div className='mb-8 flex justify-center'><Image src={assetPath('/wikiNewLogo.png')} width={888} height={163} alt='WikiClub Tech-UU' className='h-auto w-[min(34rem,92vw)] object-contain' priority /></div><p className='mb-4 text-sm font-bold uppercase tracking-[0.28em] text-black/70'>Wikiclub Tech-UU • 2026–27</p><h1 className='mb-6 text-5xl font-black tracking-tight text-black drop-shadow-lg md:text-7xl'>Our Mission, Our People</h1><p className='mx-auto max-w-3xl text-xl font-medium text-black/95 drop-shadow md:text-2xl'>More than a team page — discover the people, story, and community behind Wikiclub Tech-UU.</p></motion.div></div></header>
     <main className='container mx-auto max-w-7xl space-y-20 px-6 py-16'>
       <FoundersSection /><FacultyCoordinatorSection />
       <section aria-labelledby='current-team-heading' className='scroll-mt-32'>

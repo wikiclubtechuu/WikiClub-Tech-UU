@@ -1,6 +1,6 @@
 import type { TeamMember } from './teamMembers';
 
-const image = (file: string) => `https://raw.githubusercontent.com/mishraji0519/wikiclubtech-nitin/main/WikiClub-Tech-UU-main/WikiClub-Tech-UU-main/public/team/${encodeURIComponent(file)}`;
+const image = (file: string) => `/team/team/${file}`;
 
 export const currentVolunteerDemoMembers: TeamMember[] = [
   { id: 'current-nitin-volunteer', name: 'Nitin Kumar Mishra', role: 'Volunteer', roleType: 'volunteer', image: image('Nitin Kumar Mishra.jpg'), email: 'nitin.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/nitin-kumar-mishra-531b21402?utm_source=share_via&utm_content=profile&utm_medium=member_android', github: 'https://github.com/mishraji0519' },
@@ -28,9 +28,5 @@ export const currentVolunteerDemoMembers: TeamMember[] = [
   { id: 'current-samriddhi-volunteer', name: 'Samriddhi Vaish', role: 'Volunteer', roleType: 'volunteer', image: image('Samriddhi vaish.png'), email: 'samriddhi.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/samriddhi-vaish-b3975b419', github: 'https://github.com/samriddhivaish3-code' },
   { id: 'current-abhinisht-volunteer', name: 'Abhinisht Singh', role: 'Volunteer', roleType: 'volunteer', image: image('Abhinisht Singh.jpg'), email: 'abhinisht.wikiclubtech@gmail.com', linkedin: 'http://linkedin.com/in/abhinisht-singh-1271ab311', github: 'https://github.com/Abhinisht' },
   { id: 'current-ashutosh-mishra-volunteer', name: 'Ashutosh Mishra', role: 'Volunteer', roleType: 'volunteer', image: image('Ashutosh Mishra New.jpeg'), email: 'c.t.o.curelex26@gmail.com', linkedin: 'https://www.linkedin.com/in/ashutosh-mishra-841408324', github: 'https://github.com/Ashutosh26-uu' },
-  { id: 'current-prakhar-volunteer', name: 'Prakhar Rai', role: 'Volunteer', roleType: 'volunteer', image: image('Prakhar Rai new.jpg'), email: 'prakharraiuu@gmail.com', linkedin: 'https://www.linkedin.com/in/prakhar-rai-9ab284386?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', github: 'https://github.com/prakharraiuu' },
-  { id: 'current-akshara-volunteer', name: 'Akshara Tripathi', role: 'Volunteer', roleType: 'volunteer', image: image('AKSHARA TRIPATHI.jpg'), email: 'akshara.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/akshara-tripathi-8055523a7?utm_source=share_via&utm_content=profile&utm_medium=member_android', github: 'https://github.com/aksharatripathi23-svg' },
-  { id: 'current-vanshika-volunteer', name: 'Vanshika Sharma', role: 'Volunteer', roleType: 'volunteer', image: image('Vanshika Sharma.jpg'), email: 'vanshika.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/vanshika-sharma-845548356?utm_source=share_via&utm_content=profile&utm_medium=member_android', github: 'https://github.com/vs979812-hub' },
   { id: 'current-nitin-kumar-volunteer', name: 'Nitin Kumar', role: 'Volunteer', roleType: 'volunteer', image: image('Nitin Kumar.png'), email: 'nitinkumar.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/nitin-kumar-64a778421?utm_source=share_via&utm_content=profile&utm_medium=member_android', github: 'https://github.com/askeeuv' },
-  { id: 'current-krishna-volunteer', name: 'Krishna Singh', role: 'Volunteer', roleType: 'volunteer', image: image('Krishna Singh.jpg'), email: 'Krishna.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/krishna-singh-81b46a32a?utm_source=share_via&utm_content=profile&utm_medium=member_android', github: 'https://github.com/krishnasingh460' },
 ];
