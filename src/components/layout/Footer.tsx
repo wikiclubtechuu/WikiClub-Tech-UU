@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -151,7 +151,7 @@ const Footer = () => {
         {/* Bottom Copyright */}
         <div className="border-t border-[#234563] py-6">
           <p className="text-center text-sm text-slate-400">
-            © {new Date().getFullYear()} WikiClub Tech. All rights reserved.
+            Â© {new Date().getFullYear()} WikiClub Tech. All rights reserved.
           </p>
         </div>
       </div>
