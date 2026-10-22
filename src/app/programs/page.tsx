@@ -91,7 +91,7 @@ export default function ProgramsPage() {
 
             <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-[#10243A] sm:text-5xl sm:leading-[1.1] lg:text-6xl">
               Learn. Contribute.{" "}
-              <span className="bg-gradient-to-r from-[#168BC4] via-[#168BC4] to-[#209E75] bg-clip-text text-transparent">
+              <span className="text-[#168BC4]">
                 Grow together.
               </span>
             </h1>
