@@ -1,4 +1,5 @@
-﻿"use client";
+
+"use client";
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -10,25 +11,16 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Teams", href: "/teams" },
-  { label: "Blogs", href: "/blogs" },
-  {
-    label: "Events",
-    href: "/events",
-  },
-  {
-  label: "Gallery",
-  href: "/gallery",
-},
-  { label: "Achievements", href: "/achievements" },
-  { label: "Certify", href: "/validator" },
+  { label: "Events", href: "/events" },
+  { label: "Achievements", href: "/contributors" },
   { label: "Help Desk", href: "/pyq" },
 ];
 
 const menuItems = [
-  {
-    label: "Programs",
-    href: "/programs",
-  },
+  { label: "Programs", href: "/programs" },
+  { label: "Blogs", href: "/blogs" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Certify", href: "/validator" },
   {
     label: "Join Us",
     href: "https://forms.gle/FGoyrEHC1CuP9hPSA",
@@ -42,13 +34,16 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Close the mobile navigation when the user scrolls.
+  // Close both menus when the user scrolls.
   useEffect(() => {
     const handleScroll = () => {
       setMobileOpen(false);
+      setMenuOpen(false);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -68,10 +63,18 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
+  const menuItemClass = (href: string) =>
+    `block rounded-lg px-4 py-3 text-sm font-semibold transition-all duration-200 ${
+      isActive(href)
+        ? "bg-sky-50 text-sky-600"
+        : "text-gray-600 hover:bg-sky-50 hover:text-sky-600 hover:translate-x-1"
+    }`;
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-md shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
+          {/* Logo */}
           <Link
             href="/"
             onClick={closeMenus}
@@ -113,7 +116,9 @@ const Navbar = () => {
                       : "text-gray-600 hover:bg-sky-50 hover:text-sky-600 hover:-translate-y-[1px]"
                   }`}
                 >
-                  <span className="relative z-10">{item.label}</span>
+                  <span className="relative z-10">
+                    {item.label}
+                  </span>
 
                   {active && (
                     <motion.span
@@ -130,63 +135,51 @@ const Navbar = () => {
               );
             })}
 
-            {/* Desktop Overflow Menu */}
-            <div className="ml-2 flex items-center gap-1">
+            {/* Desktop Three-Dot Menu */}
+            <div className="ml-2 flex items-center">
               <div className="relative">
                 <motion.button
                   type="button"
                   whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.94 }}
-                  onClick={() => setMenuOpen((prev) => !prev)}
+                  onClick={() =>
+                    setMenuOpen((prev) => !prev)
+                  }
                   className={`flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 ${
                     menuOpen
                       ? "bg-sky-50 text-sky-600"
                       : "text-gray-600 hover:bg-sky-50 hover:text-sky-600"
                   }`}
-                  aria-label="Open menu"
+                  aria-label="Toggle additional navigation"
                   aria-expanded={menuOpen}
                 >
-                  <AnimatePresence mode="wait">
-                    {menuOpen ? (
-                      <motion.div
-                        key="close"
-                        initial={{ opacity: 0, rotate: -90 }}
-                        animate={{ opacity: 1, rotate: 0 }}
-                        exit={{ opacity: 0, rotate: 90 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <FaTimes className="text-base" />
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        key="menu"
-                        initial={{ opacity: 0, rotate: -90 }}
-                        animate={{ opacity: 1, rotate: 0 }}
-                        exit={{ opacity: 0, rotate: 90 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <FaBars className="text-base" />
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <span className="text-2xl leading-none">
+                    ⋯
+                  </span>
                 </motion.button>
 
                 <AnimatePresence>
                   {menuOpen && (
                     <motion.div
-                      initial={{ opacity: 0, y: -8, scale: 0.96 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -8, scale: 0.96 }}
+                      initial={{
+                        opacity: 0,
+                        y: -8,
+                        scale: 0.96,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                      }}
+                      exit={{
+                        opacity: 0,
+                        y: -8,
+                        scale: 0.96,
+                      }}
                       transition={{ duration: 0.18 }}
                       className="absolute right-0 top-full mt-2 w-52 overflow-hidden rounded-xl border border-gray-100 bg-white p-1.5 shadow-xl shadow-gray-200/50"
                     >
                       {menuItems.map((item) => {
-                        const itemClass = `block rounded-lg px-4 py-3 text-sm font-semibold transition-all duration-200 ${
-                          isActive(item.href)
-                            ? "bg-sky-50 text-sky-600"
-                            : "text-gray-600 hover:bg-sky-50 hover:text-sky-600 hover:translate-x-1"
-                        }`;
-
                         if (item.external) {
                           return (
                             <a
@@ -195,7 +188,9 @@ const Navbar = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={closeMenus}
-                              className={itemClass}
+                              className={menuItemClass(
+                                item.href
+                              )}
                             >
                               {item.label}
                             </a>
@@ -207,7 +202,9 @@ const Navbar = () => {
                             key={item.label}
                             href={item.href}
                             onClick={closeMenus}
-                            className={itemClass}
+                            className={menuItemClass(
+                              item.href
+                            )}
                           >
                             {item.label}
                           </Link>
@@ -224,9 +221,14 @@ const Navbar = () => {
           <motion.button
             type="button"
             whileTap={{ scale: 0.9 }}
-            onClick={() => setMobileOpen((prev) => !prev)}
+            onClick={() => {
+              setMobileOpen((prev) => !prev);
+              setMenuOpen(false);
+            }}
             className="lg:hidden flex h-10 w-10 items-center justify-center rounded-full text-gray-700 transition-all duration-200 hover:bg-sky-50 hover:text-sky-600"
-            aria-label="Toggle menu"
+            aria-label={
+              mobileOpen ? "Close navigation" : "Open navigation"
+            }
             aria-expanded={mobileOpen}
           >
             <AnimatePresence mode="wait">
@@ -262,10 +264,14 @@ const Navbar = () => {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
               className="lg:hidden overflow-hidden border-t border-gray-100"
             >
               <div className="py-4">
+                {/* Main Links */}
                 {navItems.map((item) => {
                   const active = isActive(item.href);
 
@@ -292,11 +298,9 @@ const Navbar = () => {
                   );
                 })}
 
+                {/* Additional Links */}
                 <div className="mt-2 border-t border-gray-100 pt-2">
                   {menuItems.map((item) => {
-                    const itemClass =
-                      "block rounded-lg px-4 py-3 text-sm font-semibold text-gray-600 transition-all duration-200 hover:bg-sky-50 hover:text-sky-600 hover:translate-x-1";
-
                     if (item.external) {
                       return (
                         <a
@@ -305,7 +309,9 @@ const Navbar = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={closeMenus}
-                          className={itemClass}
+                          className={menuItemClass(
+                            item.href
+                          )}
                         >
                           {item.label}
                         </a>
@@ -317,7 +323,9 @@ const Navbar = () => {
                         key={item.label}
                         href={item.href}
                         onClick={closeMenus}
-                        className={itemClass}
+                        className={menuItemClass(
+                          item.href
+                        )}
                       >
                         {item.label}
                       </Link>
@@ -334,6 +342,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
