@@ -12,7 +12,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Teams", href: "/teams" },
   { label: "Events", href: "/events" },
-  { label: "Achievements", href: "/achievements },
+  { label: "Achievements", href: "/achievements" },
   { label: "Help Desk", href: "/pyq" },
 ];
 
