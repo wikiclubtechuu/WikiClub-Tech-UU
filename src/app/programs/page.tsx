@@ -85,7 +85,7 @@ export default function ProgramsPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="max-w-4xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-sky-200/90 bg-white/75 px-4 py-2 text-sm font-semibold text-sky-800 shadow-sm shadow-sky-900/[0.04] backdrop-blur-sm">
-              <Sparkles className="h-4 w-4 text-sky-600" aria-hidden="true" />
+              <Sparkles className="h-4 w-4 text-sky-600 transition-transform duration-300 hover:rotate-12 hover:scale-110 motion-reduce:transform-none" aria-hidden="true" />
               WikiClub Tech UU · Programs
             </span>
 
@@ -105,13 +105,13 @@ export default function ProgramsPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="#programs"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#0b2540] px-6 py-3 font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#163a5c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#0b2540] px-6 py-3 font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#163a5c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
               >
-                Explore programs <ArrowUpRight className="h-4 w-4" />
+                Explore programs <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
               </a>
               <a
                 href="mailto:wikitech@indicwiki.org"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300/80 bg-white/75 px-6 py-3 font-semibold text-[#0b2540] transition hover:border-sky-300 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300/80 bg-white/75 px-6 py-3 font-semibold text-[#0b2540] transition hover:border-sky-300 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
               >
                 <Mail className="h-4 w-4" /> Contact the team
               </a>
@@ -161,8 +161,8 @@ export default function ProgramsPage() {
 
                 <div className="relative flex items-start justify-between gap-4">
 {!isBlue && Icon && (
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-[#12856f]">
-                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    <div className="group flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-[#12856f] transition-colors duration-300 hover:bg-emerald-200">
+                      <Icon className="h-5 w-5 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110 motion-reduce:transform-none" aria-hidden="true" />
                     </div>
                   )}
                   <span
@@ -185,9 +185,9 @@ export default function ProgramsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={"View more details about " + program.title}
-                    className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isBlue ? "bg-[#168BC4] hover:bg-[#0f78c0] focus-visible:ring-sky-500" : "bg-[#18835F] hover:bg-[#0f6f5d] focus-visible:ring-emerald-500"}`}
+                    className={`group inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isBlue ? "bg-[#168BC4] hover:bg-[#0f78c0] focus-visible:ring-sky-500" : "bg-[#18835F] hover:bg-[#0f6f5d] focus-visible:ring-emerald-500"}`}
                   >
-                    View program details <ArrowUpRight className="h-4 w-4" />
+                    View program details <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
                   </a>
                 </div>
               </article>
@@ -235,8 +235,8 @@ export default function ProgramsPage() {
         <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 shadow-md shadow-slate-900/[0.04] sm:p-10 lg:p-12">
           <div className="flex flex-col gap-7 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-[#168BC4]">
-                <BookOpen className="h-5 w-5" aria-hidden="true" />
+              <div className="group flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-[#168BC4] transition-colors duration-300 hover:bg-sky-200">
+                <BookOpen className="h-5 w-5 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 motion-reduce:transform-none" aria-hidden="true" />
               </div>
               <h2 className="mt-4 text-2xl font-bold tracking-tight text-[#10243A] sm:text-3xl lg:text-4xl">
                 Ready to start contributing?
@@ -250,9 +250,9 @@ export default function ProgramsPage() {
               href="https://forms.gle/FGoyrEHC1CuP9hPSA"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#102A43] px-6 py-3 font-bold text-white shadow-md shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#183B5B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+              className="group inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#102A43] px-6 py-3 font-bold text-white shadow-md shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#183B5B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
             >
-              Join the community <ArrowUpRight className="h-4 w-4" />
+              Join the community <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
             </Link>
           </div>
         </div>
