@@ -4,6 +4,7 @@ import {
   ArrowUpRight,
   BookOpen,
   Code2,
+  Coffee,
   Mail,
   Sparkles,
 } from "lucide-react";
@@ -16,7 +17,7 @@ const programs = [
     description:
       "A relaxed, beginner-friendly space to discover Wikimedia, open knowledge, and open-source collaboration through conversations and community-led learning.",
     href: "https://meta.wikimedia.org/wiki/Chai_with_Wiki",
-    icon: null,
+    icon: Coffee,
     accent: "blue",
   },
   {
