@@ -83,7 +83,7 @@ export default function ProgramsPage() {
           }}
         />
         <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-          <div className="max-w-4xl">
+          <div className="program-hero-enter max-w-4xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-[#1689d8]/30 bg-white/75 px-4 py-2 text-sm font-semibold text-[#1689d8] shadow-sm shadow-sky-900/[0.04] backdrop-blur-sm">
               <Sparkles className="h-4 w-4 text-[#1689d8] transition-transform duration-300 hover:rotate-12 hover:scale-110 motion-reduce:transform-none" aria-hidden="true" />
               WikiClub Tech UU · Programs
