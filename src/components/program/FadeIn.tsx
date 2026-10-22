@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 /** Reveals page sections gently when they enter the viewport. */
-export default function FadeIn({ children }: { children: ReactNode }) {
+export default function FadeIn({ children, delayMs = 0 }: { children: ReactNode; delayMs?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -34,6 +34,7 @@ export default function FadeIn({ children }: { children: ReactNode }) {
     <div
       ref={ref}
       className={`transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}
+      style={{ transitionDelay: visible ? `${delayMs}ms` : "0ms" }}
     >
       {children}
     </div>
