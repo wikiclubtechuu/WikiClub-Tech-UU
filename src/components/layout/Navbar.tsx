@@ -13,7 +13,6 @@ const navItems = [
   { label: "Teams", href: "/teams" },
   { label: "Events", href: "/events" },
   { label: "Achievements", href: "/contributors" },
-  { label: "Certify", href: "/validator" },
   { label: "Help Desk", href: "/pyq" },
 ];
 
@@ -21,6 +20,7 @@ const menuItems = [
   { label: "Programs", href: "/programs" },
   { label: "Blogs", href: "/blogs" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Certify", href: "/validator" },
   {
     label: "Join Us",
     href: "https://forms.gle/FGoyrEHC1CuP9hPSA",
