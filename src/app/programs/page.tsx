@@ -48,10 +48,10 @@ const faqs = [
 
 export default function ProgramsPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white text-slate-900">
       {/* The grid and gradient are intentionally limited to this hero section. */}
       <section
-        className="relative isolate overflow-hidden border-b border-slate-200/70"
+        className="relative isolate flex min-h-[560px] items-center overflow-hidden border-b border-[#e4edf5] sm:min-h-[600px] lg:min-h-[640px]"
         style={{ backgroundColor: "#f8fcfa" }}
       >
         {/* Pastel hero colors fade gradually into the plain page background. */}
@@ -89,9 +89,9 @@ export default function ProgramsPage() {
               WikiClub Tech UU · Programs
             </span>
 
-            <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-[#10243A] sm:text-5xl sm:leading-[1.1] lg:text-6xl">
+            <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight text-[#0b2540] sm:text-5xl sm:leading-[1.1] lg:text-6xl">
               Learn. Contribute.{" "}
-              <span className="text-[#168BC4]">
+              <span className="text-[#1689d8]">
                 Grow together.
               </span>
             </h1>
@@ -105,13 +105,13 @@ export default function ProgramsPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="#programs"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#102A43] px-6 py-3 font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#183B5B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#0b2540] px-6 py-3 font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-[#163a5c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
               >
                 Explore programs <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
                 href="mailto:wikitech@indicwiki.org"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300/80 bg-white/75 px-6 py-3 font-semibold text-[#102A43] transition hover:border-sky-300 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300/80 bg-white/75 px-6 py-3 font-semibold text-[#0b2540] transition hover:border-sky-300 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
               >
                 <Mail className="h-4 w-4" /> Contact the team
               </a>
@@ -148,11 +148,11 @@ export default function ProgramsPage() {
               <article
                 key={program.id}
                 id={program.id}
-                className={`group relative isolate overflow-hidden rounded-3xl border bg-white p-6 shadow-sm shadow-slate-900/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/[0.08] sm:p-8 ${isBlue ? "border-sky-200/90 hover:border-sky-300" : "border-emerald-200/90 hover:border-emerald-300"}`}
+                className={`group relative isolate overflow-hidden rounded-2xl border bg-white p-6 shadow-sm shadow-slate-900/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/[0.08] sm:p-8 ${isBlue ? "border-sky-200/90 hover:border-sky-300" : "border-emerald-200/90 hover:border-emerald-300"}`}
               >
                 <div
                   aria-hidden="true"
-                  className={`absolute inset-x-0 top-0 h-1 ${isBlue ? "bg-[#1595D0]" : "bg-[#209E75]"}`}
+                  className={`absolute inset-x-0 top-0 h-1 ${isBlue ? "bg-[#1689d8]" : "bg-[#19b99a]"}`}
                 />
                 <div
                   aria-hidden="true"
@@ -161,7 +161,7 @@ export default function ProgramsPage() {
 
                 <div className="relative flex items-start justify-between gap-4">
 {!isBlue && Icon && (
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-[#18835F]">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-[#12856f]">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
                   )}
@@ -185,7 +185,7 @@ export default function ProgramsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={"View more details about " + program.title}
-                    className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isBlue ? "bg-[#168BC4] hover:bg-[#1175A6] focus-visible:ring-sky-500" : "bg-[#18835F] hover:bg-[#126B4D] focus-visible:ring-emerald-500"}`}
+                    className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isBlue ? "bg-[#168BC4] hover:bg-[#0f78c0] focus-visible:ring-sky-500" : "bg-[#18835F] hover:bg-[#0f6f5d] focus-visible:ring-emerald-500"}`}
                   >
                     View program details <ArrowUpRight className="h-4 w-4" />
                   </a>
@@ -257,6 +257,6 @@ export default function ProgramsPage() {
         </div>
       </section>
       </FadeIn>
-    </main>
+    </div>
   );
 }
