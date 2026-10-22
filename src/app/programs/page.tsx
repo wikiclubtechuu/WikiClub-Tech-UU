@@ -147,7 +147,7 @@ export default function ProgramsPage() {
               <FadeIn key={program.id} delayMs={index * 180}>
               <article
                 id={program.id}
-                className={`program-card-light group relative isolate overflow-hidden rounded-2xl border bg-white p-6 shadow-sm shadow-slate-900/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/[0.08] sm:p-8 ${isBlue ? "program-card-light-blue border-[#1689d8]/30 hover:border-[#1689d8]" : "program-card-light-green border-[#19b99a]/35 hover:border-[#19b99a]"}`}
+                className={`program-card-light group relative isolate flex h-full flex-col overflow-hidden rounded-2xl border bg-white p-6 shadow-sm shadow-slate-900/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/[0.08] sm:p-8 ${isBlue ? "program-card-light-blue border-[#1689d8]/30 hover:border-[#1689d8]" : "program-card-light-green border-[#19b99a]/35 hover:border-[#19b99a]"}`}
               >
                 <div
                   aria-hidden="true"
@@ -174,11 +174,11 @@ export default function ProgramsPage() {
                 <h3 className="relative mt-6 text-2xl font-bold tracking-tight text-[#10243A] sm:text-3xl">
                   {program.title}
                 </h3>
-                <p className="relative mt-3 max-w-xl text-sm leading-7 text-slate-600 sm:min-h-[5.25rem] sm:text-base">
+                <p className="relative mt-3 max-w-xl flex-grow text-sm leading-7 text-slate-600 sm:min-h-[5.25rem] sm:text-base">
                   {program.description}
                 </p>
 
-                <div className="relative mt-6 border-t border-slate-200/80 pt-5">
+                <div className="relative mt-auto border-t border-slate-200/80 pt-5">
                   <a
                     href={program.href}
                     target="_blank"
