@@ -147,7 +147,7 @@ export default function ProgramsPage() {
               <FadeIn key={program.id} delayMs={index * 180}>
               <article
                 id={program.id}
-                className={`group relative isolate overflow-hidden rounded-2xl border bg-white p-6 shadow-sm shadow-slate-900/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/[0.08] sm:p-8 ${isBlue ? "border-[#1689d8]/30 hover:border-[#1689d8]" : "border-[#19b99a]/35 hover:border-[#19b99a]"}`}
+                className={`program-card-light group relative isolate overflow-hidden rounded-2xl border bg-white p-6 shadow-sm shadow-slate-900/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/[0.08] sm:p-8 ${isBlue ? "program-card-light-blue border-[#1689d8]/30 hover:border-[#1689d8]" : "program-card-light-green border-[#19b99a]/35 hover:border-[#19b99a]"}`}
               >
                 <div
                   aria-hidden="true"
