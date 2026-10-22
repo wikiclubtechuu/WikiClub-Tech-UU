@@ -665,6 +665,7 @@ img {
 }
 
 .program-card-light-blue:hover {
+  border-width: 2px;
   border-color: transparent;
   background:
     linear-gradient(#fff, #fff) padding-box,
@@ -681,6 +682,7 @@ img {
 }
 
 .program-card-light-green:hover {
+  border-width: 2px;
   border-color: transparent;
   background:
     linear-gradient(#fff, #fff) padding-box,
