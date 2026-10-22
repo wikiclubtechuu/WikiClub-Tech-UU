@@ -140,13 +140,13 @@ export default function ProgramsPage() {
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 md:gap-6">
-          {programs.map((program) => {
+          {programs.map((program, index) => {
             const Icon = program.icon;
             const isBlue = program.accent === "blue";
 
             return (
+              <FadeIn key={program.id} delayMs={index * 180}>
               <article
-                key={program.id}
                 id={program.id}
                 className={`group relative isolate overflow-hidden rounded-2xl border bg-white p-6 shadow-sm shadow-slate-900/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/[0.08] sm:p-8 ${isBlue ? "border-sky-200/90 hover:border-sky-300" : "border-emerald-200/90 hover:border-emerald-300"}`}
               >
@@ -191,6 +191,7 @@ export default function ProgramsPage() {
                   </a>
                 </div>
               </article>
+              </FadeIn>
             );
           })}
         </div>
