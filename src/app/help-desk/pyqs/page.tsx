@@ -10,7 +10,7 @@ import PyqSection from "@/components/help-desk/PyqSection";
 import type { Paper } from "@/types/pyq";
 
 // Always fetch fresh data on each request (papers are added by uploading to ImageKit, not by redeploying).
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export const metadata = {
   title: "Previous Year Questions | Help Desk",

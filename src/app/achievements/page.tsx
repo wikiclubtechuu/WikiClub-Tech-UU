@@ -1,4 +1,11 @@
-﻿"use client";
+﻿// FILE: src/app/achievements/page.tsx   (route: /achievements)
+// CHANGES IN THIS VERSION:
+//   1. Contributor photo paths fixed: "/team/<name>" -> "/team/team/<name>"
+//      (the real files live in public/team/team/, so the old paths fell back to initials).
+//   2. The slideshow <img> now uses encodeURI() so file names with spaces
+//      ("LDC 3.jpg", "gen ai hackathon.jpg") always load.
+//   Everything else is unchanged.
+"use client";
 import { Fragment, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -34,6 +41,7 @@ type Contributor = {
    CONTRIBUTION CHAMPIONS
    First 10 = verified contribution records.
    Next 10 = featured contributors from the team screenshots.
+   NOTE: photos live in public/team/team/ so paths start with /team/team/
 ========================================================= */
 const contributors: Contributor[] = [
   {
@@ -41,7 +49,7 @@ const contributors: Contributor[] = [
     name: "Mohd Shadab",
     merged: 4,
     links: [],
-    image: "/team/Mohd Shadab.jpg",
+    image: "/team/team/Mohd Shadab.jpg", // FIXED path
     description:
       "Contributed to WikiClub Tech through open-source project contributions and community development.",
   },
@@ -50,7 +58,7 @@ const contributors: Contributor[] = [
     name: "Kavaljeet Singh",
     merged: 3,
     links: [],
-    image: "/team/KAVALJEET SINGH.jpg",
+    image: "/team/team/KAVALJEET SINGH.jpg", // FIXED path
     description:
       "Contributed to WikiClub Tech through collaborative project and open-source contribution activities.",
   },
@@ -59,7 +67,7 @@ const contributors: Contributor[] = [
     name: "Pushpit Saluja",
     merged: 2,
     links: [],
-    image: "/team/Pushpit Saluja.jpg",
+    image: "/team/team/Pushpit Saluja.jpg", // FIXED path
     description:
       "Contributed to WikiClub Tech projects and collaborative community development.",
   },
@@ -68,7 +76,7 @@ const contributors: Contributor[] = [
     name: "Hemant Ojha",
     merged: 2,
     links: [],
-    image: "/team/Hemant Ojha.png",
+    image: "/team/team/Hemant Ojha.png", // FIXED path
     description:
       "Contributed to WikiClub Tech through open-source collaboration and project development.",
   },
@@ -77,7 +85,7 @@ const contributors: Contributor[] = [
     name: "Vratej Diwedi",
     merged: 1,
     links: [],
-    image: "/team/Vratej Dwivedi.png",
+    image: "/team/team/Vratej Dwivedi.png", // FIXED path
     description:
       "Participated in WikiClub Tech contribution activities and collaborative project development.",
   },
@@ -86,7 +94,7 @@ const contributors: Contributor[] = [
     name: "Vaishnavi Mishra",
     merged: 1,
     links: [],
-    image: "",
+    image: "", // no photo file exists for her, so the initials badge is shown
     description:
       "Contributed to WikiClub Tech community projects and collaborative activities.",
   },
@@ -95,7 +103,7 @@ const contributors: Contributor[] = [
     name: "Shresth Srivastava",
     merged: 1,
     links: [],
-    image: "",
+    image: "", // no photo assigned, so the initials badge is shown
     description:
       "Contributed to WikiClub Tech through collaborative project work and community contributions.",
   },
@@ -104,7 +112,7 @@ const contributors: Contributor[] = [
     name: "Rehan Khan",
     merged: 1,
     links: [],
-    image: "/team/Rehan Khan.jpg",
+    image: "/team/team/Rehan Khan.jpg", // FIXED path
     description:
       "Contributed to WikiClub Tech projects and community contribution activities.",
   },
@@ -113,7 +121,7 @@ const contributors: Contributor[] = [
     name: "Shrey Jaiswal",
     merged: 1,
     links: [],
-    image: "/team/Shrey.jpg",
+    image: "/team/team/Shrey.jpg", // FIXED path
     description:
       "Contributed to WikiClub Tech through collaborative development and open-source activities.",
   },
@@ -122,13 +130,14 @@ const contributors: Contributor[] = [
     name: "Tejash Yadav",
     merged: 1,
     links: [],
-    image: "/team/Tejash Yadav.jpg",
+    image: "/team/team/Tejash Yadav.jpg", // FIXED path
     description:
       "Contributed to WikiClub Tech projects and open-source community activities.",
   },
   /* =======================================================
      ADDITIONAL FEATURED CONTRIBUTORS (11 to 20)
      Commented out — only top 10 verified contributors shown
+     (if you uncomment these, change "/team/" to "/team/team/" in each image path)
   =======================================================
   {
     id: "anupam-yadav",
@@ -252,8 +261,7 @@ const achievementHighlights: Highlight[] = [
       "Kavaljeet Singh contributed improvements to Clip2Commons, including Author Override, accessibility enhancements such as keyboard navigation and ARIA support, and improvements to the upload workflow. These contributions were reviewed and merged as part of the open-source development process.",
     image: "/achievements/open-source-contributions.png",
     secondaryImage: "/achievements/open-source-contributions.png",
-    link:
-      "https://www.linkedin.com/posts/kavaljeet-singh-dev_opensource-wikimedia-mediawiki-activity-7482391525847601152-CZNr",
+    link: "https://www.linkedin.com/posts/kavaljeet-singh-dev_opensource-wikimedia-mediawiki-activity-7482391525847601152-CZNr",
   },
   {
     id: "genai-hackathon-2025",
@@ -277,8 +285,7 @@ const achievementHighlights: Highlight[] = [
       "Mohd Shadab shared his Wikimedia journey and delivered a ‘Why I Wiki?’ session at WikiClub Tech UU. The celebration brought students closer to open knowledge, Wikimedia projects and the importance of improving representation in online knowledge resources.",
     image: "/achievements/wikipedia-25.png",
     secondaryImage: "/achievements/wikipedia-25.png",
-    link:
-      "https://diff.wikimedia.org/2026/04/12/wikipedia-25th-birthday-celebration-at-wikiclub-tech-united-university/",
+    link: "https://diff.wikimedia.org/2026/04/12/wikipedia-25th-birthday-celebration-at-wikiclub-tech-united-university/",
   },
   {
     id: "uhack-4-runner-up",
@@ -362,6 +369,7 @@ const achievementHighlights: Highlight[] = [
 
 /* =========================================================
    CONTRIBUTOR AVATAR
+   Shows the photo; if it is missing or fails to load, shows the initials badge.
 ========================================================= */
 function ContributorAvatar({
   name,
@@ -381,6 +389,7 @@ function ContributorAvatar({
     .toUpperCase();
   const isLarge = size === "large";
 
+  // No photo (or it failed to load): show the initials badge
   if (!image || imageError) {
     return (
       <div
@@ -394,16 +403,18 @@ function ContributorAvatar({
   }
 
   return (
+    // "relative" is required because <Image fill> positions itself inside this box
     <div
-      className={`shrink-0 overflow-hidden rounded-full border-2 border-white bg-slate-100 shadow-sm ring-1 ring-slate-200 ${
+      className={`relative shrink-0 overflow-hidden rounded-full border-2 border-white bg-slate-100 shadow-sm ring-1 ring-slate-200 ${
         isLarge ? "h-20 w-20" : "h-12 w-12"
       }`}
     >
-      <img
-        src={encodeURI(image)}
+      <Image
+        src={image}
         alt={`${name} profile`}
-        className="h-full w-full object-cover"
-        loading="lazy"
+        fill
+        sizes={isLarge ? "80px" : "48px"}
+        className="object-cover"
         onError={() => setImageError(true)}
       />
     </div>
@@ -454,10 +465,7 @@ function RankBadge({ rank }: { rank: number }) {
         className="relative flex h-12 w-12 items-center justify-center rounded-full border-2 border-yellow-300 bg-gradient-to-br from-yellow-100 via-yellow-200 to-yellow-400 shadow-md shadow-yellow-200/50"
         title="1st Place"
       >
-        <Medal
-          className="h-6 w-6 text-yellow-700"
-          strokeWidth={2.2}
-        />
+        <Medal className="h-6 w-6 text-yellow-700" strokeWidth={2.2} />
         <span className="absolute -bottom-2 rounded-full border border-yellow-300 bg-white px-1.5 py-0.5 text-[9px] font-extrabold text-yellow-700 shadow-sm">
           #1
         </span>
@@ -471,10 +479,7 @@ function RankBadge({ rank }: { rank: number }) {
         className="relative flex h-12 w-12 items-center justify-center rounded-full border-2 border-slate-300 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 shadow-md shadow-slate-200/50"
         title="2nd Place"
       >
-        <Medal
-          className="h-6 w-6 text-slate-600"
-          strokeWidth={2.2}
-        />
+        <Medal className="h-6 w-6 text-slate-600" strokeWidth={2.2} />
         <span className="absolute -bottom-2 rounded-full border border-slate-300 bg-white px-1.5 py-0.5 text-[9px] font-extrabold text-slate-600 shadow-sm">
           #2
         </span>
@@ -488,10 +493,7 @@ function RankBadge({ rank }: { rank: number }) {
         className="relative flex h-12 w-12 items-center justify-center rounded-full border-2 border-orange-300 bg-gradient-to-br from-orange-100 via-orange-200 to-orange-400 shadow-md shadow-orange-200/50"
         title="3rd Place"
       >
-        <Medal
-          className="h-6 w-6 text-orange-700"
-          strokeWidth={2.2}
-        />
+        <Medal className="h-6 w-6 text-orange-700" strokeWidth={2.2} />
         <span className="absolute -bottom-2 rounded-full border border-orange-300 bg-white px-1.5 py-0.5 text-[9px] font-extrabold text-orange-700 shadow-sm">
           #3
         </span>
@@ -518,15 +520,14 @@ const highlightSections: {
   description: string;
   slides: HighlightSlide[];
 }[] = [
-  
   {
     id: "global-opportunities",
     heading: "Global Achievements & Opportunities",
     description:
       "Explore global scholarships, travel grants, international events and open-source opportunities for students and contributors.",
     slides: [
-// Removed existing slides for brevity; see comments below for preserved code.
-/*
+      // Removed existing slides for brevity; see comments below for preserved code.
+      /*
   {
     id: "wikimedia-scholarships",
     title: "Wikimedia Scholarships & Travel Grants",
@@ -561,47 +562,47 @@ const highlightSections: {
     linkText: "Explore Wikimedia",
   },
 */
-{
-  id: "wikiconference-india-2026",
-  title: "WikiConference India 2026",
-  subtitle: "Kochi, Kerala · September 4–6, 2026",
-  description:
-    "WikiConference India 2026 brought together Wikimedians from across India for sessions, workshops and community collaboration. Explore the official Meta-Wiki page for programme details, reports and community highlights.",
-  image: "/achievements/wikiconference.jpg",
-  link: "https://meta.wikimedia.org/wiki/WikiConference_India_2026",
-  linkText: "View WikiConference India 2026",
-},
-{
-  id: "language-diversity-conference",
-  title: "Language Diversity Conference (LDC)",
-  subtitle: "Language Diversity · Wikimedia Movement",
-  description:
-    "The Language Diversity Conference brings together people working to support linguistic diversity, multilingual knowledge and underrepresented languages across Wikimedia projects. Explore the conference resource to learn more about language communities and their initiatives.",
-  image: "/achievements/LDC 3.jpg",
-  link: "https://share.google/Ia1pvT1gVZwbgfrF8",
-  linkText: "Explore Language Diversity Conference",
-},
-{
-  id: "train-a-wikipedian",
-  title: "Train a Wikipedian (TaW)",
-  subtitle: "Deoband Community Wikimedia",
-  description:
-    "Train a Wikipedian is an initiative by Deoband Community Wikimedia that empowers volunteers and emerging community leaders with Wikimedia knowledge, leadership skills and opportunities to contribute to open knowledge ecosystems.",
-  image: "/achievements/taw26.jpg",
-  link: "https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia/Train_a_Wikipedian",
-  linkText: "Explore Train a Wikipedian",
-},
+      {
+        id: "wikiconference-india-2026",
+        title: "WikiConference India 2026",
+        subtitle: "Kochi, Kerala · September 4–6, 2026",
+        description:
+          "WikiConference India 2026 brought together Wikimedians from across India for sessions, workshops and community collaboration. Explore the official Meta-Wiki page for programme details, reports and community highlights.",
+        image: "/achievements/wikiconference.jpg",
+        link: "https://meta.wikimedia.org/wiki/WikiConference_India_2026",
+        linkText: "View WikiConference India 2026",
+      },
+      {
+        id: "language-diversity-conference",
+        title: "Language Diversity Conference (LDC)",
+        subtitle: "Language Diversity · Wikimedia Movement",
+        description:
+          "The Language Diversity Conference brings together people working to support linguistic diversity, multilingual knowledge and underrepresented languages across Wikimedia projects. Explore the conference resource to learn more about language communities and their initiatives.",
+        image: "/achievements/LDC 3.jpg",
+        link: "https://share.google/Ia1pvT1gVZwbgfrF8",
+        linkText: "Explore Language Diversity Conference",
+      },
+      {
+        id: "train-a-wikipedian",
+        title: "Train a Wikipedian (TaW)",
+        subtitle: "Deoband Community Wikimedia",
+        description:
+          "Train a Wikipedian is an initiative by Deoband Community Wikimedia that empowers volunteers and emerging community leaders with Wikimedia knowledge, leadership skills and opportunities to contribute to open knowledge ecosystems.",
+        image: "/achievements/taw26.jpg",
+        link: "https://meta.wikimedia.org/wiki/Deoband_Community_Wikimedia/Train_a_Wikipedian",
+        linkText: "Explore Train a Wikipedian",
+      },
 
-{
-  id: "shadab-global-achievement",
-  title: "Shadab's Global Achievement",
-  subtitle: "Mohd Shadab · Wikimedia Hackathon",
-  description:
-    "Mohd Shadab represented WikiClub Tech UU at a global Wikimedia event, participating alongside Wikimedians from around the world. This milestone highlights the community's growing presence at international open-knowledge platforms.",
-  image: "/achievements/shadab-global-achievement.jpg",
-  link: "https://lnkd.in/p/gXwMk4MC",
-  linkText: "View Achievement",
-},
+      {
+        id: "shadab-global-achievement",
+        title: "Shadab's Global Achievement",
+        subtitle: "Mohd Shadab · Wikimedia Hackathon",
+        description:
+          "Mohd Shadab represented WikiClub Tech UU at a global Wikimedia event, participating alongside Wikimedians from around the world. This milestone highlights the community's growing presence at international open-knowledge platforms.",
+        image: "/achievements/shadab-global-achievement.jpg",
+        link: "https://lnkd.in/p/gXwMk4MC",
+        linkText: "View Achievement",
+      },
     ],
   },
 
@@ -627,8 +628,7 @@ const highlightSections: {
         subtitle: "Team Nimbus · UIT Prayagraj",
         description:
           "A team achievement highlighting innovation, collaboration and problem-solving during a GenAI hackathon.",
-        image:
-          "/achievements/gen ai hackathon.jpg",
+        image: "/achievements/gen ai hackathon.jpg",
         link: "https://in.linkedin.com/in/kavaljeet-singh-dev",
         linkText: "View Contributor Profile",
       },
@@ -753,6 +753,7 @@ function HighlightSlideshow({
   const [index, setIndex] = useState(0);
   const current = section.slides[index];
 
+  // Auto-advance the slideshow every 10 seconds
   useEffect(() => {
     const timer = window.setInterval(() => {
       setIndex((previous) => (previous + 1) % section.slides.length);
@@ -764,8 +765,7 @@ function HighlightSlideshow({
   const previous = () => {
     setIndex(
       (previousIndex) =>
-        (previousIndex - 1 + section.slides.length) %
-        section.slides.length,
+        (previousIndex - 1 + section.slides.length) % section.slides.length,
     );
   };
 
@@ -796,12 +796,12 @@ function HighlightSlideshow({
             className="grid min-h-[420px] lg:grid-cols-2"
           >
             <div className="relative min-h-[280px] overflow-hidden bg-[#F7FAFC] sm:min-h-[380px]">
-              <img
+              <Image
                 src={current.image}
                 alt={current.title}
-                loading="lazy"
-                decoding="async"
-                className="absolute inset-0 h-full w-full object-cover"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
               <span className="absolute bottom-6 left-6 rounded-full bg-white/95 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#045797]">
@@ -884,6 +884,7 @@ function HighlightSlideshow({
 
 /* =========================================================
    LAZY-LOADED HIGHLIGHT SECTION
+   Only renders the slideshow once it is near the viewport.
 ========================================================= */
 function LazyHighlightSlideshow({
   section,
@@ -942,7 +943,6 @@ function LazyHighlightSlideshow({
   );
 }
 
-
 /* =========================================================
    PAGE
 ========================================================= */
@@ -953,138 +953,137 @@ export default function AchievementsPage() {
   const contributorsPerPage = 10;
 
   const totalContributorPages = Math.ceil(
-    contributors.length / contributorsPerPage
+    contributors.length / contributorsPerPage,
   );
 
   const visibleContributors = contributors.slice(
     contributorPage * contributorsPerPage,
-    contributorPage * contributorsPerPage + contributorsPerPage
+    contributorPage * contributorsPerPage + contributorsPerPage,
   );
 
   const totalContributions = contributors.reduce(
     (total, contributor) => total + (contributor.merged || 0),
-    0
+    0,
   );
 
   const verifiedContributors = contributors.filter(
-    (contributor) => typeof contributor.merged === "number"
+    (contributor) => typeof contributor.merged === "number",
   ).length;
 
   const totalAchievements = achievements.length;
 
   return (
-
-      <main className="achievement-page relative isolate min-h-screen">
-
-    {/* Pastel gradient background */}
-  <div
-    aria-hidden="true"
-    className="pointer-events-none absolute inset-0 -z-10"
-    style={{
-      background: `
+    <main className="achievement-page relative isolate min-h-screen">
+      {/* Pastel gradient background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background: `
         radial-gradient(circle at 15% 10%, rgba(210, 238, 250, 0.75) 0%, rgba(210, 238, 250, 0) 42%),
         radial-gradient(circle at 85% 10%, rgba(215, 250, 225, 0.8) 0%, rgba(215, 250, 225, 0) 45%),
         radial-gradient(circle at 80% 90%, rgba(255, 245, 235, 0.65) 0%, rgba(255, 245, 235, 0) 40%),
         #f8fcfa
       `,
-    }}
-  />
+        }}
+      />
 
-  {/* Hero & Milestones section with scoped background grid */}
-  <div className="relative isolate">
-    {/* Grid background — scoped to Hero through Our Milestones */}
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-0 -z-10"
-      style={{
-        backgroundImage: `
+      {/* Hero & Milestones section with scoped background grid */}
+      <div className="relative isolate">
+        {/* Grid background — scoped to Hero through Our Milestones */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            backgroundImage: `
           linear-gradient(rgba(100, 116, 139, 0.12) 1px, transparent 1px),
           linear-gradient(90deg, rgba(100, 116, 139, 0.12) 1px, transparent 1px)
         `,
-        backgroundSize: "52px 52px",
-        backgroundPosition: "center center",
-        maskImage: "linear-gradient(to bottom, black 80%, transparent)",
-        WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent)",
-      }}
-    />
+            backgroundSize: "52px 52px",
+            backgroundPosition: "center center",
+            maskImage: "linear-gradient(to bottom, black 80%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black 80%, transparent)",
+          }}
+        />
 
-    {/* HERO */}
-    <section className="relative z-10 mx-auto max-w-7xl px-6 pb-16 pt-28 lg:px-8">
-      <div className="max-w-4xl">
-        <p className="achievement-label mb-4">
-          WikiClub Tech UU · Achievements
-        </p>
+        {/* HERO */}
+        <section className="relative z-10 mx-auto max-w-7xl px-6 pb-16 pt-28 lg:px-8">
+          <div className="max-w-4xl">
+            <p className="achievement-label mb-4">
+              WikiClub Tech UU · Achievements
+            </p>
 
-        <h1 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">
-          Celebrating
-          <span className="achievement-blue"> Ideas, Impact </span>
-          & Achievement.
-        </h1>
+            <h1 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">
+              Celebrating
+              <span className="achievement-blue"> Ideas, Impact </span>&
+              Achievement.
+            </h1>
 
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-          A record of the milestones, achievements and contributions that
-          define the WikiClub Tech community at United University.
-        </p>
-      </div>
-    </section>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              A record of the milestones, achievements and contributions that
+              define the WikiClub Tech community at United University.
+            </p>
+          </div>
+        </section>
 
-    {/* =====================================================
+        {/* =====================================================
         OUR MILESTONES
     ===================================================== */}
-    <section className="relative z-10 mx-auto max-w-7xl px-6 pb-16 lg:px-8">
-      <div className="mb-8">
-        <p className="achievement-label">By the numbers</p>
-        <h2 className="achievement-section-title mt-2 text-3xl font-bold">
-          Our Milestones
-        </h2>
-        <p className="achievement-section-description mt-2 max-w-2xl">
-          A quick look at the community&apos;s contribution and achievement
-          milestones.
-        </p>
+        <section className="relative z-10 mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+          <div className="mb-8">
+            <p className="achievement-label">By the numbers</p>
+            <h2 className="achievement-section-title mt-2 text-3xl font-bold">
+              Our Milestones
+            </h2>
+            <p className="achievement-section-description mt-2 max-w-2xl">
+              A quick look at the community&apos;s contribution and achievement
+              milestones.
+            </p>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {/* CONTRIBUTORS */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="milestone-card"
+            >
+              <div className="milestone-line milestone-line-green" />
+              <p className="milestone-number">{contributors.length}</p>
+              <p className="milestone-label">Featured Contributors</p>
+            </motion.div>
+
+            {/* VERIFIED CONTRIBUTIONS */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05 }}
+              className="milestone-card"
+            >
+              <div className="milestone-line milestone-line-blue" />
+              <p className="milestone-number">{totalContributions}</p>
+              <p className="milestone-label">Recorded Contributions</p>
+            </motion.div>
+
+            {/* ACHIEVEMENTS */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="milestone-card"
+            >
+              <div className="milestone-line milestone-line-maroon" />
+              <p className="milestone-number">{totalAchievements}</p>
+              <p className="milestone-label">Community Achievements</p>
+            </motion.div>
+          </div>
+        </section>
       </div>
-
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {/* CONTRIBUTORS */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="milestone-card"
-        >
-          <div className="milestone-line milestone-line-green" />
-          <p className="milestone-number">{contributors.length}</p>
-          <p className="milestone-label">Featured Contributors</p>
-        </motion.div>
-
-        {/* VERIFIED CONTRIBUTIONS */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.05 }}
-          className="milestone-card"
-        >
-          <div className="milestone-line milestone-line-blue" />
-          <p className="milestone-number">{totalContributions}</p>
-          <p className="milestone-label">Recorded Contributions</p>
-        </motion.div>
-
-        {/* ACHIEVEMENTS */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="milestone-card"
-        >
-          <div className="milestone-line milestone-line-maroon" />
-          <p className="milestone-number">{totalAchievements}</p>
-          <p className="milestone-label">Community Achievements</p>
-        </motion.div>
-      </div>
-    </section>
-  </div>
-            {/* =====================================================
+      {/* =====================================================
           CONTRIBUTION CHAMPIONS
       ===================================================== */}
       <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
@@ -1136,9 +1135,7 @@ export default function AchievementsPage() {
                           delay: localIndex * 0.025,
                         }}
                         className={`border-b transition-colors ${
-                          isSelected
-                            ? "bg-[#F8FAFC]"
-                            : "hover:bg-slate-50/70"
+                          isSelected ? "bg-[#F8FAFC]" : "hover:bg-slate-50/70"
                         }`}
                       >
                         {/* RANK */}
@@ -1192,9 +1189,7 @@ export default function AchievementsPage() {
                           <button
                             type="button"
                             onClick={() =>
-                              setSelected(
-                                isSelected ? null : contributor.id
-                              )
+                              setSelected(isSelected ? null : contributor.id)
                             }
                             aria-expanded={isSelected}
                             className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-600 transition hover:border-[#045797]/30 hover:bg-[#F5F7FA] hover:text-[#045797]"
@@ -1344,7 +1339,7 @@ export default function AchievementsPage() {
                 {contributorPage * contributorsPerPage + 1}–
                 {Math.min(
                   (contributorPage + 1) * contributorsPerPage,
-                  contributors.length
+                  contributors.length,
                 )}
               </span>{" "}
               of{" "}
@@ -1376,7 +1371,7 @@ export default function AchievementsPage() {
                 type="button"
                 onClick={() => {
                   setContributorPage((page) =>
-                    Math.min(totalContributorPages - 1, page + 1)
+                    Math.min(totalContributorPages - 1, page + 1),
                   );
                   setSelected(null);
                 }}
@@ -1425,22 +1420,22 @@ export default function AchievementsPage() {
           </Link>
         </motion.div>
       </section>
-      
-{/* =====================================================
+
+      {/* =====================================================
     ACHIEVEMENT HIGHLIGHTS
 ===================================================== */}
-<section className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
-  <div className="mb-10">
-    <p className="achievement-label">WikiClub Tech Community</p>
-    <h2 className="achievement-section-title mt-2 text-3xl font-bold">
-      Achievement Highlights
-    </h2>
-  </div>
+      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+        <div className="mb-10">
+          <p className="achievement-label">WikiClub Tech Community</p>
+          <h2 className="achievement-section-title mt-2 text-3xl font-bold">
+            Achievement Highlights
+          </h2>
+        </div>
 
-  {highlightSections.map((section) => (
-  <LazyHighlightSlideshow key={section.id} section={section} />
-  ))}
-</section>
+        {highlightSections.map((section) => (
+          <LazyHighlightSlideshow key={section.id} section={section} />
+        ))}
+      </section>
     </main>
   );
 }

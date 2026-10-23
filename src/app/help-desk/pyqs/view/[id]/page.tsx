@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 import { loadPapers } from "@/lib/imagekit-papers";
 import BackButton from "@/components/help-desk/BackButton";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Question Paper | Help Desk | WikiClub Tech",
