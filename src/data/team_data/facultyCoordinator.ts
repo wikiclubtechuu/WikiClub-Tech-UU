@@ -2,7 +2,7 @@ import type { TeamMember } from './teamMembers';
 
 export const facultyCoordinator: TeamMember = {
   id: 'faculty-coordinator',
-  name: 'Naveen Kumar Dubey',
+  name: 'Naveen Kumar Gupta',
   role: 'Faculty Coordinator',
   roleType: 'coordinator',
   image: '/team/team/NAVEEN.jpeg',
