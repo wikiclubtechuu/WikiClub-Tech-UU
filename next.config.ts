@@ -27,6 +27,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "thumb.wikimedia.org",
       },
+      {
+        protocol: "https",
+        hostname: "ik.imagekit.io",
+      },
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
     ],
   },
 };
