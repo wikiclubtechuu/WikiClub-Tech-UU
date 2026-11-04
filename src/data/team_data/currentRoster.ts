@@ -4,14 +4,11 @@ export type CurrentTeamMember = TeamMember & { team?: string; metaWiki?: string;
 
 const image = (file: string) => `/team/team/${file}`;
 
-// Contact links for Zaid Sayyad and Sanskar Dubey (same icons as Mohd Shadab's card).
-const shadabContact = { email: 'shadab.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/mohdshadabdev', github: 'https://github.com/mohdshadabdev' };
-
 export const currentRoster: CurrentTeamMember[] = [
   { id: 'current-anshuman-envoy', name: 'Anshuman Rai', role: 'Envoy', roleType: 'envoy', image: image('ANSHUMAN-ENVOY.jpeg'), email: 'anshuman.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/hey-anshuman', github: 'https://github.com/hey-anshuman' },
   { id: 'current-sohrab-envoy', name: 'Syed Sohrab Haider Rizvi', role: 'Co-Envoy', roleType: 'envoy', image: image('SOHRAB-COENVOY.jpeg'), email: 'sohrab.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/syed-sohrab-haider-rizvi', github: 'https://github.com/StormZShr' },
-  { id: 'current-sanskar-mentor', name: 'Sanskar Dubey', role: 'Mentor', roleType: 'mentor', image: image('SANSKAR.jpeg'), ...shadabContact },
-  { id: 'current-zaid-mentor', name: 'Zaid Sayyad', role: 'Mentor', roleType: 'mentor', image: image('ZAID.jpeg'), ...shadabContact },
+  { id: 'current-sanskar-mentor', name: 'Sanskar Dubey', role: 'Mentor', roleType: 'mentor', image: image('SANSKAR.jpeg'),  email: 'sanskardubeydev@gmail.com', linkedin: 'https://www.linkedin.com/in/sanskardev?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', github: 'https://github.com/dubeysanskar' },
+  { id: 'current-zaid-mentor', name: 'Zaid Sayyad', role: 'Mentor', roleType: 'mentor', image: image('ZAID.jpeg'),  email: 'zaidsayyed07869@gmail.com', linkedin: 'https://www.linkedin.com/in/zaid-sayyed?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', github: 'https://github.com/Zaidusyy', },
   { id: 'current-shadab-mentor', name: 'Mohd Shadab', role: 'Mentor', roleType: 'mentor', image: image('Mohd Shadab.jpg'), email: 'shadab.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/mohdshadabdev', github: 'https://github.com/mohdshadabdev' },
   { id: 'current-vratej-lead', name: 'Vratej Dwivedi', role: 'Team Lead', roleType: 'lead', team: 'Graphics & Design', image: image('VRATEJ.jpeg'), email: 'vratej.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/vratej-dwivedi-740957286/', github: 'https://github.com/VRATEJDWIVEDI/' },
   { id: 'current-amit-lead', name: 'Amit Yadav', role: 'Team Lead', roleType: 'lead', team: 'Social Media & Promotion', image: image('AMIT.jpeg'), imagePosition: 'center top', email: 'amit.wikiclubtech@gmail.com', linkedin: 'https://www.linkedin.com/in/amit-yadav-3388bb3a7?utm_source=share_via&utm_content=profile&utm_medium=member_android', github: 'https://github.com/AMIT3949P' },
