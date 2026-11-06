@@ -18,7 +18,7 @@ export const founders: Founder[] = [
   {
     id: 'founder-anshuman-rai',
     name: 'Anshuman Rai',
-    role: 'Founder',
+    role: 'B-TECH AI/ML',
     roleType: 'founder',
     image: image('Anshuman Rai Founder.jpeg'),
     email: 'anshuman.wikiclubtech@gmail.com',
@@ -30,7 +30,7 @@ export const founders: Founder[] = [
   {
     id: 'founder-mohd-shadab',
     name: 'Mohd Shadab',
-    role: 'Founder',
+    role: 'BCA IBM',
     roleType: 'founder',
     image: image('SHADAB-FOUNDER.jpeg'),
     imagePosition: '30% center',

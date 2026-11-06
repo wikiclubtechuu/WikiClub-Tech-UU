@@ -58,7 +58,7 @@ const RoleNavigation = ({ members, activeSection, onNavigate, idPrefix }: { memb
 const FoundersSection = () => {
   const projectCoordinator = previousTeamMembers.find((member) => member.roleType === 'coordinator');
   return <section aria-labelledby='founders-heading'>
-    <div className='mx-auto mb-10 max-w-3xl text-center'><div className='mb-4 inline-flex items-center gap-2 rounded-full bg-amber-50 px-4 py-2 text-sm font-bold text-amber-700 ring-1 ring-amber-200'><Crown className='h-4 w-4' />The Beginning</div><h2 id='founders-heading' className='text-4xl font-black tracking-tight md:text-5xl'>Our Founders</h2><p className='mt-4 text-muted-foreground'>The people who started the journey and helped shape the vision of Wikiclub Tech-UU.</p></div>
+    <div className='mx-auto mb-10 max-w-3xl text-center'><div className='mb-4 inline-flex items-center gap-2 rounded-full bg-amber-50 px-4 py-2 text-sm font-bold text-amber-700 ring-1 ring-amber-200'><Crown className='h-4 w-4' />The Beginning</div><h2 id='founders-heading' className='text-4xl font-black tracking-tight md:text-5xl'>Our Pioneers</h2><p className='mt-4 text-muted-foreground'>The people who started the journey and helped shape the vision of Wikiclub Tech-UU.</p></div>
     <div className='mx-auto max-w-5xl space-y-6'>{founders.map((member) => <TeamMemberCard key={member.id} {...member} />)}</div>
     {projectCoordinator && <><div className='mx-auto my-10 max-w-5xl text-center'><h3 className='text-4xl font-black tracking-tight text-slate-900 md:text-5xl'>Wikiclub Tech India (Part of OKI-IIITH)</h3></div><div className='mx-auto max-w-5xl'><TeamMemberCard {...projectCoordinator} /></div></>}
   </section>;
