@@ -413,13 +413,7 @@ img {
 .achievement-page {
   min-height: 100vh;
   color: #172b4d;
-  background-color: #e0f7f1;
-  background-image:
-    linear-gradient(rgba(74, 126, 150, 0.075) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(74, 126, 150, 0.075) 1px, transparent 1px),
-    linear-gradient(110deg, #d9f3fa 0%, #e0f9ed 100%);
-  background-size: 57px 57px, 57px 57px, 100% 100%;
-  background-attachment: fixed;
+  background-color: #f8fcfa;
 }
 
 .achievement-page .achievement-label {
